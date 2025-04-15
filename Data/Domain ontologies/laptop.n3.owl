@@ -1,0 +1,1129 @@
+# Base: http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#
+@prefix p1:      <http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#$> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix default:  <http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+default:QualityMention
+      a       owl:Class ;
+      rdfs:subClassOf default:AspectMention ;
+      default:aspect "MOTHERBOARD#QUALITY"^^xsd:string , "POWER_SUPPLY#QUALITY"^^xsd:string , "HARD_DISK#QUALITY"^^xsd:string , "GRAPHICS#QUALITY"^^xsd:string , "MEMORY#QUALITY"^^xsd:string , "LAPTOP#QUALITY"^^xsd:string , "BATTERY#QUALITY"^^xsd:string , "PORTS#QUALITY"^^xsd:string , "OS#QUALITY"^^xsd:string , "MULTIMEDIA_DEVICES#QUALITY"^^xsd:string , "COMPANY#QUALITY"^^xsd:string , "DISPLAY#QUALITY"^^xsd:string , "SOFWARE#QUALITY"^^xsd:string , "CPU#QUALITY"^^xsd:string , "SUPPORT#QUALITY"^^xsd:string , "OPTICAL_DRIVES#QUALITY"^^xsd:string , "FANS_COOLING#QUALITY"^^xsd:string , "WARRANTY#QUALITY"^^xsd:string , "MOUSE#QUALITY"^^xsd:string , "SHIPPING#QUALITY"^^xsd:string , "KEYBOARD#QUALITY"^^xsd:string , "HARDWARE#QUALITY"^^xsd:string ;
+      default:lex "quality"^^xsd:string .
+
+default:Multimedia_devicesMention
+      a       owl:Class ;
+      rdfs:subClassOf default:AttachmentsMention ;
+      default:aspect "MULTIMEDIA_DEVICES#QUALITY"^^xsd:string , "MULTIMEDIA_DEVICES#GENERAL"^^xsd:string , "MULTIMEDIA_DEVICES#OPERATION_PERFORMANCE"^^xsd:string , "MULTIMEDIA_DEVICES#DESIGN_FEATURES"^^xsd:string , "MULTIMEDIA_DEVICES#USABILITY"^^xsd:string ;
+      default:lex "multimedia devices"^^xsd:string .
+
+default:Decent
+      a       owl:Class ;
+      rdfs:subClassOf default:GenericNeutralSentiment ;
+      default:lex "decent"^^xsd:string .
+
+default:aspect
+      a       owl:AnnotationProperty , owl:DatatypeProperty .
+
+default:Euro
+      a       owl:Class ;
+      rdfs:subClassOf default:PriceMention ;
+      default:lex "euro"^^xsd:string .
+
+default:Lenovo
+      a       owl:Class ;
+      rdfs:subClassOf default:CompanyMention ;
+      default:lex "lenovo"^^xsd:string .
+
+default:SofwareMention
+      a       owl:Class ;
+      rdfs:subClassOf default:ProgramsMention ;
+      default:lex "sofware"^^xsd:string , "software"^^xsd:string .
+
+default:High
+      a       owl:Class ;
+      rdfs:subClassOf default:ContextDependentSentimentMention ;
+      default:lex "high"^^xsd:string , "large"^^xsd:string , "big"^^xsd:string .
+
+default:PortabilityNegativeSentiment
+      a       owl:Class ;
+      rdfs:subClassOf default:PortabilityMention .
+
+default:MousePositiveSentiment
+      a       owl:Class ;
+      rdfs:subClassOf default:MouseMention , default:SentimentMention , default:Positive .
+
+default:SentimentMention
+      a       owl:Class .
+
+default:Colorful
+      a       owl:Class ;
+      rdfs:subClassOf default:DisplayPositiveSentiment ;
+      default:lex "colorful"^^xsd:string .
+
+default:UsabilityMention
+      a       owl:Class ;
+      rdfs:subClassOf default:AspectMention ;
+      default:aspect "OPTICAL_DRIVES#USABILITY"^^xsd:string , "MOTHERBOARD#USABILITY"^^xsd:string , "HARDWARE#USABILITY"^^xsd:string , "BATTERY#USABILITY"^^xsd:string , "FANS_COOLING#USABILITY"^^xsd:string , "OS#USABILITY"^^xsd:string , "WARRANTY#USABILITY"^^xsd:string , "PORTS#USABILITY"^^xsd:string , "SOFWARE#USABILITY"^^xsd:string , "SHIPPING#USABILITY"^^xsd:string , "MULTIMEDIA_DEVICES#USABILITY"^^xsd:string , "MEMORY#USABILITY"^^xsd:string , "CPU#USABILITY"^^xsd:string , "LAPTOP#USABILITY"^^xsd:string , "COMPANY#USABILITY"^^xsd:string , "POWER_SUPPLY#USABILITY"^^xsd:string , "KEYBOARD#USABILITY"^^xsd:string , "MOUSE#USABILITY"^^xsd:string , "GRAPHICS#USABILITY"^^xsd:string , "HARD_DISK#USABILITY"^^xsd:string , "SUPPORT#USABILITY"^^xsd:string , "DISPLAY#USABILITY"^^xsd:string ;
+      default:lex "use"^^xsd:string , "utility"^^xsd:string , "usability"^^xsd:string .
+
+default:ConnectivityMention
+      a       owl:Class ;
+      rdfs:subClassOf default:AspectMention ;
+      default:aspect "LAPTOP#CONNECTIVITY"^^xsd:string ;
+      default:lex "connectivity"^^xsd:string .
+
+[]    a       owl:Class ;
+      rdfs:subClassOf default:Positive ;
+      owl:intersectionOf (default:High default:QualityMention) .
+
+default:laptopMention
+      a       owl:Class ;
+      rdfs:subClassOf default:AspectMention ;
+      default:aspect "LAPTOP#OPERATION_PERFORMANCE"^^xsd:string , "LAPTOP#USABILITY"^^xsd:string , "LAPTOP#DESIGN_FEATURES"^^xsd:string , "LAPTOP#PORTABILITY"^^xsd:string , "LAPTOP#CONNECTIVITY"^^xsd:string , "LAPTOP#PRICE"^^xsd:string , "LAPTOP#QUALITY"^^xsd:string , "LAPTOP#GENERAL"^^xsd:string ;
+      default:lex "laptop"^^xsd:string , "computer"^^xsd:string , "pc"^^xsd:string .
+
+default:Video
+      a       owl:Class ;
+      rdfs:subClassOf default:GraphicsMention ;
+      default:lex "video"^^xsd:string .
+
+default:Look
+      a       owl:Class ;
+      rdfs:subClassOf default:Design_featuresMention ;
+      default:lex "look"^^xsd:string .
+
+default:AspectMention
+      a       owl:Class .
+
+default:BatteryMention
+      a       owl:Class ;
+      rdfs:subClassOf default:PowerMention ;
+      default:aspect "BATTERY#DESIGN_FEATURES"^^xsd:string , "BATTERY#OPERATION_PERFORMANCE"^^xsd:string , "BATTERY#MISCELLANEOUS"^^xsd:string , "BATTERY#USABILITY"^^xsd:string , "BATTERY#QUALITY"^^xsd:string ;
+      default:lex "battery"^^xsd:string .
+
+default:ConnectivityNegativeSentiment
+      a       owl:Class ;
+      rdfs:subClassOf default:SentimentMention , default:ConnectivityMention , default:Negative .
+
+default:Bios
+      a       owl:Class ;
+      rdfs:subClassOf default:MotherboardMention ;
+      default:lex "bios"^^xsd:string .
+
+default:KeyboardMention
+      a       owl:Class ;
+      rdfs:subClassOf default:ControlsMention ;
+      default:lex "keyboard"^^xsd:string .
+
+default:Neutral
+      a       owl:Class ;
+      rdfs:subClassOf default:SentimentValue .
+
+default:Thread
+      a       owl:Class ;
+      rdfs:subClassOf default:CpuMention ;
+      default:lex "thread"^^xsd:string .
+
+default:Hard_diskMention
+      a       owl:Class ;
+      rdfs:subClassOf default:SpaceMention ;
+      default:aspect "HARD_DISK#DESIGN_FEATURES"^^xsd:string , "HARD_DISK#QUALITY"^^xsd:string , "HARD_DISK#GENERAL"^^xsd:string , "HARD_DISK#OPERATION_PERFORMANCE"^^xsd:string , "HARD_DISK#USABILITY"^^xsd:string .
+
+default:Fan
+      a       owl:Class ;
+      rdfs:subClassOf default:Fans_coolingMention ;
+      default:lex "fan"^^xsd:string .
+
+[]    a       owl:Class ;
+      rdfs:subClassOf default:Positive ;
+      owl:intersectionOf (default:Fast default:Operation_performanceMention) .
+
+default:Beautiful
+      a       owl:Class ;
+      rdfs:subClassOf default:Design_featuresPositiveSentiment ;
+      default:lex "beautiful"^^xsd:string .
+
+default:Jack
+      a       owl:Class ;
+      rdfs:subClassOf default:PortsMention ;
+      default:lex "jack"^^xsd:string .
+
+default:Apple
+      a       owl:Class ;
+      rdfs:subClassOf default:CompanyMention ;
+      default:lex "apple"^^xsd:string .
+
+default:Gigabyte
+      a       owl:Class ;
+      rdfs:subClassOf default:SpaceMention ;
+      default:lex "gb"^^xsd:string , "megabyte"^^xsd:string , "gigabyte"^^xsd:string , "mb"^^xsd:string .
+
+default:UsabilityNegativeSentiment
+      a       owl:Class ;
+      rdfs:subClassOf default:SentimentMention , default:UsabilityMention , default:Negative .
+
+default:SpaceMention
+      a       owl:Class ;
+      rdfs:subClassOf default:AspectMention ;
+      default:aspect "MEMORY#USABILITY"^^xsd:string , "MEMORY#DESIGN_FEATURES"^^xsd:string , "MEMORY#GENERAL"^^xsd:string , "MEMORY#OPERATION_PERFORMANCE"^^xsd:string , "MEMORY#QUALITY"^^xsd:string .
+
+default:Fans_coolingPositiveSentiment
+      a       owl:Class ;
+      rdfs:subClassOf default:SentimentMention , default:Fans_coolingMention , default:Positive .
+
+default:Moderate
+      a       owl:Class ;
+      rdfs:subClassOf default:GenericNeutralSentiment ;
+      default:lex "moderate"^^xsd:string .
+
+p1:   a       owl:Class ;
+      rdfs:subClassOf default:PriceMention ;
+      default:lex "$"^^xsd:string .
+
+default:Ok
+      a       owl:Class ;
+      rdfs:subClassOf default:GenericNeutralSentiment ;
+      default:lex "okay"^^xsd:string , "ok"^^xsd:string .
+
+default:ugly
+      a       owl:Class ;
+      rdfs:subClassOf default:Design_featuresNegativeSentiment ;
+      default:lex "ugly"^^xsd:string , "hideous"^^xsd:string .
+
+default:Graphicscard
+      a       owl:Class ;
+      rdfs:subClassOf default:GraphicsMention ;
+      default:lex "graphicscard"^^xsd:string , "gpu"^^xsd:string .
+
+default:Wire
+      a       owl:Class ;
+      rdfs:subClassOf default:Power_supplyMention ;
+      default:lex "wire"^^xsd:string .
+
+default:Silent
+      a       owl:Class ;
+      rdfs:subClassOf default:Fans_coolingPositiveSentiment ;
+      default:lex "quiet"^^xsd:string , "silent"^^xsd:string .
+
+[]    a       owl:Class ;
+      rdfs:subClassOf default:Negative ;
+      owl:intersectionOf (default:High default:PriceMention) .
+
+default:Value
+      a       owl:Class ;
+      rdfs:subClassOf default:PriceMention ;
+      default:lex "value"^^xsd:string .
+
+default:GenericPositiveSentiment
+      a       owl:Class ;
+      rdfs:subClassOf default:SentimentMention , default:Positive .
+
+default:Application
+      a       owl:Class ;
+      rdfs:subClassOf default:SofwareMention ;
+      default:lex "app"^^xsd:string , "application"^^xsd:string .
+
+default:Plug
+      a       owl:Class ;
+      rdfs:subClassOf default:Power_supplyMention ;
+      default:lex "plug"^^xsd:string .
+
+default:Design_featuresMention
+      a       owl:Class ;
+      rdfs:subClassOf default:AspectMention ;
+      default:aspect "MOTHERBOARD#DESIGN_FEATURES"^^xsd:string , "POWER_SUPPLY#DESIGN_FEATURES"^^xsd:string , "PORTS#DESIGN_FEATURES"^^xsd:string , "MEMORY#DESIGN_FEATURES"^^xsd:string , "LAPTOP#DESIGN_FEATURES"^^xsd:string , "BATTERY#DESIGN_FEATURES"^^xsd:string , "MOUSE#DESIGN_FEATURES"^^xsd:string , "SOFWARE#DESIGN_FEATURES"^^xsd:string , "CPU#DESIGN_FEATURES"^^xsd:string , "WARRANTY#DESIGN_FEATURES"^^xsd:string , "OPTICAL_DRIVES#DESIGN_FEATURES"^^xsd:string , "HARDWARE#DESIGN_FEATURES"^^xsd:string , "SHIPPING#DESIGN_FEATURES"^^xsd:string , "COMPANY#DESIGN_FEATURES"^^xsd:string , "HARD_DISK#DESIGN_FEATURES"^^xsd:string , "KEYBOARD#DESIGN_FEATURES"^^xsd:string , "SUPPORT#DESIGN_FEATURES"^^xsd:string , "FANS_COOLING#DESIGN_FEATURES"^^xsd:string , "DISPLAY#DESIGN_FEATURES"^^xsd:string , "MULTIMEDIA_DEVICES#DESIGN_FEATURES"^^xsd:string , "OS#DESIGN_FEATURES"^^xsd:string , "GRAPHICS#DESIGN_FEATURES"^^xsd:string .
+
+default:Old
+      a       owl:Class ;
+      rdfs:subClassOf default:GenericNegativeSentiment ;
+      default:lex "old"^^xsd:string .
+
+default:WarrantyMention
+      a       owl:Class ;
+      rdfs:subClassOf default:ServiceMention ;
+      default:aspect "WARRANTY#GENERAL"^^xsd:string , "WARRANTY#PRICE"^^xsd:string , "WARRANTY#DESIGN_FEATURES"^^xsd:string , "WARRANTY#OPERATION_PERFORMANCE"^^xsd:string , "WARRANTY#USABILITY"^^xsd:string , "WARRANTY#QUALITY"^^xsd:string ;
+      default:lex "guarantee"^^xsd:string , "warranty"^^xsd:string .
+
+default:Wireless
+      a       owl:Class ;
+      rdfs:subClassOf default:MousePositiveSentiment ;
+      default:lex "wireless"^^xsd:string .
+
+default:CpuPositiveSentiment
+      a       owl:Class ;
+      rdfs:subClassOf default:SentimentMention , default:Positive , default:CpuMention .
+
+default:Hd
+      a       owl:Class ;
+      rdfs:subClassOf default:Resolution ;
+      default:lex "HD"^^xsd:string , "1080p"^^xsd:string , "HighDef"^^xsd:string , "HighDefinition"^^xsd:string .
+
+[]    a       owl:Class ;
+      rdfs:subClassOf default:Positive ;
+      owl:intersectionOf (default:Fast default:SpaceMention) .
+
+default:Toshiba
+      a       owl:Class ;
+      rdfs:subClassOf default:CompanyMention ;
+      default:lex "toshiba"^^xsd:string .
+
+default:Terrabyte
+      a       owl:Class ;
+      rdfs:subClassOf default:Hard_diskMention ;
+      default:lex "tb"^^xsd:string , "terrabyte"^^xsd:string .
+
+default:HardwareMention
+      a       owl:Class ;
+      rdfs:subClassOf default:AspectMention ;
+      default:aspect "HARDWARE#USABILITY"^^xsd:string , "HARDWARE#OPERATION_PERFORMANCE"^^xsd:string , "HARDWARE#GENERAL"^^xsd:string , "HARDWARE#QUALITY"^^xsd:string , "HARDWARE#DESIGN_FEATURES"^^xsd:string ;
+      default:lex "hardware"^^xsd:string .
+
+default:DisplayNegativeSentiment
+      a       owl:Class ;
+      rdfs:subClassOf default:SentimentMention , default:Negative , default:DisplayMention .
+
+default:Size
+      a       owl:Class ;
+      rdfs:subClassOf default:PortabilityMention ;
+      default:lex "size"^^xsd:string .
+
+default:Linux
+      a       owl:Class ;
+      rdfs:subClassOf default:OsMention ;
+      default:lex "linux"^^xsd:string .
+
+default:Sharp
+      a       owl:Class ;
+      rdfs:subClassOf default:DisplayPositiveSentiment ;
+      default:lex "sharp"^^xsd:string .
+
+default:Operation_performanceMention
+      a       owl:Class ;
+      rdfs:subClassOf default:AspectMention ;
+      default:aspect "PORTS#OPERATION_PERFORMANCE"^^xsd:string , "COMPANY#OPERATION_PERFORMANCE"^^xsd:string , "MOTHERBOARD#OPERATION_PERFORMANCE"^^xsd:string , "LAPTOP#OPERATION_PERFORMANCE"^^xsd:string , "CPU#OPERATION_PERFORMANCE"^^xsd:string , "FANS_COOLING#OPERATION_PERFORMANCE"^^xsd:string , "DISPLAY#OPERATION_PERFORMANCE"^^xsd:string , "OPTICAL_DRIVERS#OPERATION_PERFORMANCE"^^xsd:string , "MULTIMEDIA_DEVICES#OPERATION_PERFORMANCE"^^xsd:string , "SHIPPING#OPERATION_PERFORMANCE"^^xsd:string , "MEMORY#OPERATION_PERFORMANCE"^^xsd:string , "HARDWARE#OPERATION_PERFORMANCE"^^xsd:string , "OS#OPERATION_PERFORMANCE"^^xsd:string , "SUPPORT#OPERATION_PERFORMANCE"^^xsd:string , "MOUSE#OPERATION_PERFORMANCE"^^xsd:string , "SOFWARE#OPERATION_PERFORMANCE"^^xsd:string , "KEYBOARD#OPERATION_PERFORMANCE"^^xsd:string , "BATTERY#OPERATION_PERFORMANCE"^^xsd:string , "POWER_SUPPLY#OPERATION_PERFORMANCE"^^xsd:string , "GRAPHICS#OPERATION_PERFORMANCE"^^xsd:string , "HARD_DISK#OPERATION_PERFORMANCE"^^xsd:string , "WARRANTY#OPERATION_PERFORMANCE"^^xsd:string ;
+      default:lex "performance"^^xsd:string , "procedure"^^xsd:string , "operation_performance"^^xsd:string , "process"^^xsd:string , "operation"^^xsd:string , "execution"^^xsd:string .
+
+default:MouseNegativeSentiment
+      a       owl:Class ;
+      rdfs:subClassOf default:MouseMention , default:SentimentMention , default:Negative .
+
+default:PowerMention
+      a       owl:Class ;
+      rdfs:subClassOf default:AspectMention ;
+      default:aspect "POWER_SUPPLY#DESIGN_FEATURES"^^xsd:string , "POWER_SUPPLY#QUALITY"^^xsd:string , "POWER_SUPPLY#USABILITY"^^xsd:string , "POWER_SUPPLY#OPERATION_PERFORMANCE"^^xsd:string , "POWER_SUPPLY#GENERAL"^^xsd:string .
+
+default:CpuNegativeSentiment
+      a       owl:Class ;
+      rdfs:subClassOf default:SentimentMention , default:Negative , default:CpuMention .
+
+default:SentimentValue
+      a       owl:Class .
+
+default:Excellent
+      a       owl:Class ;
+      rdfs:subClassOf default:GenericPositiveSentiment ;
+      default:lex "excellent"^^xsd:string .
+
+[]    a       owl:Class ;
+      rdfs:subClassOf default:Positive ;
+      owl:intersectionOf (default:Fast default:ShippingMention) .
+
+default:Program
+      a       owl:Class ;
+      rdfs:subClassOf default:SofwareMention ;
+      default:lex "program"^^xsd:string .
+
+default:Hdmi
+      a       owl:Class ;
+      rdfs:subClassOf default:PortsMention ;
+      default:lex "hdmi"^^xsd:string .
+
+default:PortabilityPositiveSentiment
+      a       owl:Class ;
+      rdfs:subClassOf default:PortabilityMention .
+
+default:Usb
+      a       owl:Class ;
+      rdfs:subClassOf default:PortsMention ;
+      default:lex "usb"^^xsd:string .
+
+[]    a       owl:Class ;
+      rdfs:subClassOf default:Negative ;
+      owl:intersectionOf (default:Slow default:SupportMention) .
+
+default:Affordable
+      a       owl:Class ;
+      rdfs:subClassOf default:PricePositiveSentiment ;
+      default:lex "affordable"^^xsd:string .
+
+default:Light
+      a       owl:Class ;
+      rdfs:subClassOf default:PortabilityPositiveSentiment ;
+      default:lex "lightweight"^^xsd:string , "light"^^xsd:string .
+
+default:Best
+      a       owl:Class ;
+      rdfs:subClassOf default:GenericPositiveSentiment ;
+      default:lex "best"^^xsd:string .
+
+default:Clockrate
+      a       owl:Class ;
+      rdfs:subClassOf default:CpuMention ;
+      default:lex "hertz"^^xsd:string , "clock rate"^^xsd:string .
+
+default:Chipset
+      a       owl:Class ;
+      rdfs:subClassOf default:MotherboardMention ;
+      default:lex "chipset"^^xsd:string .
+
+default:Creative
+      a       owl:Class ;
+      rdfs:subClassOf default:GenericPositiveSentiment ;
+      default:lex "creative"^^xsd:string .
+
+default:Benchmark
+      a       owl:Class ;
+      rdfs:subClassOf default:Operation_performanceMention ;
+      default:lex "benchmark"^^xsd:string .
+
+default:Clear
+      a       owl:Class ;
+      rdfs:subClassOf default:DisplayPositiveSentiment ;
+      default:lex "clear"^^xsd:string .
+
+default:Ssd
+      a       owl:Class ;
+      rdfs:subClassOf default:Hard_diskMention ;
+      default:lex "solid state drive"^^xsd:string , "ssd"^^xsd:string .
+
+default:Letter
+      a       owl:Class ;
+      rdfs:subClassOf default:KeyboardMention ;
+      default:lex "letter"^^xsd:string .
+
+default:Slow
+      a       owl:Class ;
+      rdfs:subClassOf default:ContextDependentSentimentMention ;
+      default:lex "slow"^^xsd:string .
+
+default:Core
+      a       owl:Class ;
+      rdfs:subClassOf default:CpuMention ;
+      default:lex "i3"^^xsd:string , "quad core"^^xsd:string , "core"^^xsd:string , "dual core"^^xsd:string , "dualcore"^^xsd:string , "i7"^^xsd:string , "quad-core"^^xsd:string , "i5"^^xsd:string , "quadcore"^^xsd:string , "dual-core"^^xsd:string .
+
+default:Notebook
+      a       owl:Class ;
+      rdfs:subClassOf default:laptopMention ;
+      default:lex "notebook"^^xsd:string .
+
+default:ServiceMention
+      a       owl:Class ;
+      rdfs:subClassOf default:AspectMention ;
+      default:aspect "SUPPORT#OPERATION_PERFORMANCE"^^xsd:string , "SUPPORT#DESIGN_FEATURES"^^xsd:string , "SUPPORT#GENERAL"^^xsd:string , "SUPPORT#PRICE"^^xsd:string , "SUPPORT#QUALITY"^^xsd:string , "SUPPORT#USABILITY"^^xsd:string .
+
+default:Perfect
+      a       owl:Class ;
+      rdfs:subClassOf default:GenericPositiveSentiment ;
+      default:lex "perfect"^^xsd:string .
+
+default:Optical_drivesMention
+      a       owl:Class ;
+      rdfs:subClassOf default:AspectMention ;
+      default:aspect "OPTICAL_DRIVE#OPERATION_PERFORMANCE"^^xsd:string , "OPTICAL_DRIVE#QUALITY"^^xsd:string , "OPTICAL_DRIVE#GENERAL"^^xsd:string , "OPTICAL_DRIVE#USABILITY"^^xsd:string , "OPTICAL_DRIVE#DESIGN_FEATURES"^^xsd:string ;
+      default:lex "optical drive"^^xsd:string , "optical_drive"^^xsd:string , "drive"^^xsd:string .
+
+default:Good
+      a       owl:Class ;
+      rdfs:subClassOf default:GenericPositiveSentiment ;
+      default:lex "good"^^xsd:string .
+
+<http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop>
+      a       owl:Ontology .
+
+default:Amazing
+      a       owl:Class ;
+      rdfs:subClassOf default:GenericPositiveSentiment ;
+      default:lex "amazing"^^xsd:string .
+
+[]    a       owl:Class ;
+      rdfs:subClassOf default:Negative ;
+      owl:intersectionOf (default:ShippingMention default:Slow) .
+
+default:Fast
+      a       owl:Class ;
+      rdfs:subClassOf default:ContextDependentSentimentMention ;
+      default:lex "quick"^^xsd:string , "fast"^^xsd:string , "speedy"^^xsd:string .
+
+default:Charger
+      a       owl:Class ;
+      rdfs:subClassOf default:BatteryMention ;
+      default:lex "charger"^^xsd:string .
+
+default:Wonderful
+      a       owl:Class ;
+      rdfs:subClassOf default:GenericPositiveSentiment ;
+      default:lex "wonderful"^^xsd:string .
+
+default:Scroll
+      a       owl:Class ;
+      rdfs:subClassOf default:MouseMention ;
+      default:lex "scroll"^^xsd:string .
+
+default:Great
+      a       owl:Class ;
+      rdfs:subClassOf default:GenericPositiveSentiment ;
+      default:lex "great"^^xsd:string .
+
+default:Antiglare
+      a       owl:Class ;
+      rdfs:subClassOf default:DisplayPositiveSentiment ;
+      default:lex "antiglare"^^xsd:string .
+
+default:MicroSd
+      a       owl:Class ;
+      rdfs:subClassOf default:PortsMention ;
+      default:lex "microsd"^^xsd:string .
+
+default:MemoryMention
+      a       owl:Class ;
+      rdfs:subClassOf default:SpaceMention ;
+      default:lex "memory"^^xsd:string , "space"^^xsd:string .
+
+default:Cd
+      a       owl:Class ;
+      rdfs:subClassOf default:Optical_drivesMention ;
+      default:lex "dvd"^^xsd:string , "cd"^^xsd:string , "disk"^^xsd:string , "bluray"^^xsd:string .
+
+default:Crashing
+      a       owl:Class ;
+      rdfs:subClassOf default:SofwareNegativeSentiment ;
+      default:lex "crashing"^^xsd:string .
+
+default:New
+      a       owl:Class ;
+      rdfs:subClassOf default:GenericPositiveSentiment ;
+      default:lex "new"^^xsd:string .
+
+default:Useful
+      a       owl:Class ;
+      rdfs:subClassOf default:UsabilityPositiveSentiment ;
+      default:lex "useful"^^xsd:string .
+
+default:Fans_coolingNegativeSentiment
+      a       owl:Class ;
+      rdfs:subClassOf default:SentimentMention , default:Fans_coolingMention , default:Negative .
+
+default:PriceMention
+      a       owl:Class ;
+      rdfs:subClassOf default:AspectMention ;
+      default:aspect "WARRANTY#PRICE"^^xsd:string , "SHIPPING#PRICE"^^xsd:string , "LAPTOP#PRICE"^^xsd:string , "SUPPORT#PRICE"^^xsd:string ;
+      default:lex "price"^^xsd:string , "cost"^^xsd:string .
+
+[]    a       owl:Class ;
+      rdfs:subClassOf default:Positive ;
+      owl:intersectionOf (default:Low default:PriceMention) .
+
+[]    a       owl:Class ;
+      rdfs:subClassOf default:Negative ;
+      owl:intersectionOf (default:Operation_performanceMention default:Slow) .
+
+default:lex
+      a       owl:AnnotationProperty , owl:DatatypeProperty .
+
+default:Game
+      a       owl:Class ;
+      rdfs:subClassOf default:GraphicsMention ;
+      default:lex "game"^^xsd:string .
+
+default:Acer
+      a       owl:Class ;
+      rdfs:subClassOf default:CompanyMention ;
+      default:lex "acer"^^xsd:string .
+
+default:Click
+      a       owl:Class ;
+      rdfs:subClassOf default:MouseMention ;
+      default:lex "click"^^xsd:string .
+
+default:Wifi
+      a       owl:Class ;
+      rdfs:subClassOf default:ConnectivityMention ;
+      default:lex "wi-fi"^^xsd:string , "wifi"^^xsd:string .
+
+default:Favorite
+      a       owl:Class ;
+      rdfs:subClassOf default:GenericPositiveSentiment ;
+      default:lex "favourite"^^xsd:string , "favorite"^^xsd:string .
+
+default:Fps
+      a       owl:Class ;
+      rdfs:subClassOf default:GraphicsMention ;
+      default:lex "fps"^^xsd:string , "frames per second"^^xsd:string .
+
+default:Mediocre
+      a       owl:Class ;
+      rdfs:subClassOf default:GenericNegativeSentiment ;
+      default:lex "mediocre"^^xsd:string .
+
+default:DisplayMention
+      a       owl:Class ;
+      rdfs:subClassOf default:AspectMention ;
+      default:aspect "DISPLAY#QUALITY"^^xsd:string , "DISPLAY#DESIGN_FEATURES"^^xsd:string , "DISPLAY#OPERATION_PERFORMANCE"^^xsd:string , "DISPLAY#GENERAL"^^xsd:string , "DISPLAY#USABILITY"^^xsd:string ;
+      default:lex "display"^^xsd:string , "screen"^^xsd:string .
+
+default:Replacement
+      a       owl:Class ;
+      rdfs:subClassOf default:WarrantyMention ;
+      default:lex "replacement"^^xsd:string .
+
+default:SupportMention
+      a       owl:Class ;
+      rdfs:subClassOf default:ServiceMention ;
+      default:lex "service"^^xsd:string , "support"^^xsd:string , "help"^^xsd:string .
+
+default:Socket
+      a       owl:Class ;
+      rdfs:subClassOf default:MotherboardMention ;
+      default:lex "slot"^^xsd:string , "socket"^^xsd:string .
+
+default:MotherboardMention
+      a       owl:Class ;
+      rdfs:subClassOf default:AspectMention ;
+      default:aspect "MOTHERBOARD#OPERATION_PERFORMANCE"^^xsd:string , "MOTHERBOARD#GENERAL"^^xsd:string , "MOTHERBOARD#DESIGN_FEATURES"^^xsd:string , "MOTHERBOARD#QUALITY"^^xsd:string , "MOTHERBOARD#USABILITY"^^xsd:string ;
+      default:lex "mainboard"^^xsd:string , "mobo"^^xsd:string , "system board"^^xsd:string , "planar board"^^xsd:string , "baseboard"^^xsd:string , "motherboard"^^xsd:string , "logic board"^^xsd:string .
+
+default:Overseas
+      a       owl:Class ;
+      rdfs:subClassOf default:ShippingMention ;
+      default:lex "overseas"^^xsd:string .
+
+default:CompanyMention
+      a       owl:Class ;
+      rdfs:subClassOf default:ServiceMention ;
+      default:aspect "COMPANY#DESIGN_FEATURES"^^xsd:string , "COMPANY#OPERATION_PERFORMANCE"^^xsd:string , "COMPANY#QUALITY"^^xsd:string , "COMPANY#USABILITY"^^xsd:string , "COMPANY#GENERAL"^^xsd:string ;
+      default:lex "company"^^xsd:string .
+
+default:Loud
+      a       owl:Class ;
+      rdfs:subClassOf default:Fans_coolingNegativeSentiment ;
+      default:lex "loud"^^xsd:string , "noisy"^^xsd:string .
+
+default:Vivid
+      a       owl:Class ;
+      rdfs:subClassOf default:DisplayPositiveSentiment ;
+      default:lex "vivid"^^xsd:string .
+
+default:Bargain
+      a       owl:Class ;
+      rdfs:subClassOf default:PricePositiveSentiment ;
+      default:lex "bargain"^^xsd:string .
+
+default:PortabilityMention
+      a       owl:Class ;
+      rdfs:subClassOf default:AspectMention ;
+      default:aspect "LAPTOP#PORTABILITY"^^xsd:string ;
+      default:lex "portability"^^xsd:string .
+
+default:Medion
+      a       owl:Class ;
+      rdfs:subClassOf default:CompanyMention ;
+      default:lex "medion"^^xsd:string .
+
+default:Design_featuresNegativeSentiment
+      a       owl:Class ;
+      rdfs:subClassOf default:Design_featuresMention , default:SentimentMention , default:Negative .
+
+default:Vga
+      a       owl:Class ;
+      rdfs:subClassOf default:PortsMention ;
+      default:lex "video graphics array"^^xsd:string , "vga"^^xsd:string .
+
+default:ContextDependentSentimentMention
+      a       owl:Class ;
+      rdfs:subClassOf default:SentimentMention .
+
+default:Clunky
+      a       owl:Class ;
+      rdfs:subClassOf default:UsabilityNegativeSentiment ;
+      default:lex "clunky"^^xsd:string .
+
+default:Horrible
+      a       owl:Class ;
+      rdfs:subClassOf default:GenericNegativeSentiment ;
+      default:lex "horrible"^^xsd:string .
+
+default:Dell
+      a       owl:Class ;
+      rdfs:subClassOf default:CompanyMention ;
+      default:lex "dell"^^xsd:string .
+
+default:PricePositiveSentiment
+      a       owl:Class ;
+      rdfs:subClassOf default:PriceMention , default:SentimentMention , default:Positive .
+
+default:HalfDecent
+      a       owl:Class ;
+      rdfs:subClassOf default:GenericNegativeSentiment ;
+      default:lex "halfdecent"^^xsd:string .
+
+default:SofwareNegativeSentiment
+      a       owl:Class ;
+      rdfs:subClassOf default:SofwareMention , default:SentimentMention , default:Negative .
+
+default:Power_supplyMention
+      a       owl:Class ;
+      rdfs:subClassOf default:PowerMention ;
+      default:lex "power"^^xsd:string , "powersupply"^^xsd:string , "powerbrick"^^xsd:string .
+
+default:HeadphoneJack
+      a       owl:Class ;
+      rdfs:subClassOf default:PortsMention ;
+      default:lex "headphonejack"^^xsd:string , "headphone jack"^^xsd:string .
+
+default:Design_featuresPositiveSentiment
+      a       owl:Class ;
+      rdfs:subClassOf default:Design_featuresMention , default:SentimentMention , default:Positive .
+
+default:Internet
+      a       owl:Class ;
+      rdfs:subClassOf default:ConnectivityMention ;
+      default:lex "web"^^xsd:string , "internet"^^xsd:string .
+
+default:Style
+      a       owl:Class ;
+      rdfs:subClassOf default:Design_featuresMention ;
+      default:lex "style"^^xsd:string .
+
+default:MSI
+      a       owl:Class ;
+      rdfs:subClassOf default:CompanyMention ;
+      default:lex "msi"^^xsd:string .
+
+default:Money
+      a       owl:Class ;
+      rdfs:subClassOf default:PriceMention ;
+      default:lex "money"^^xsd:string .
+
+default:Manufacturer
+      a       owl:Class ;
+      rdfs:subClassOf default:CompanyMention ;
+      default:lex "manufacturer"^^xsd:string .
+
+default:ControlsMention
+      a       owl:Class ;
+      rdfs:subClassOf default:AspectMention ;
+      default:aspect "KEYBOARD#DESIGN_FEATURES"^^xsd:string , "KEYBOARD#OPERATION_PERFORMANCE"^^xsd:string , "KEYBOARD#USABILITY"^^xsd:string , "KEYBOARD#QUALITY"^^xsd:string , "KEYBOARD#GENERAL"^^xsd:string .
+
+default:Glare
+      a       owl:Class ;
+      rdfs:subClassOf default:DisplayNegativeSentiment ;
+      default:lex "glare"^^xsd:string .
+
+default:OsMention
+      a       owl:Class ;
+      rdfs:subClassOf default:ProgramsMention ;
+      default:aspect "OS#GENERAL"^^xsd:string , "OS#USABILITY"^^xsd:string , "OS#DESIGN_FEATURES"^^xsd:string , "OS#QUALITY"^^xsd:string , "OS#OPERATION_PERFORMANCE"^^xsd:string ;
+      default:lex "operating system"^^xsd:string , "os"^^xsd:string , "operating_system"^^xsd:string .
+
+default:UsabilityPositiveSentiment
+      a       owl:Class ;
+      rdfs:subClassOf default:SentimentMention , default:UsabilityMention , default:Positive .
+
+default:Budget
+      a       owl:Class ;
+      rdfs:subClassOf default:PriceMention ;
+      default:lex "budget"^^xsd:string .
+
+default:Awesome
+      a       owl:Class ;
+      rdfs:subClassOf default:GenericPositiveSentiment ;
+      default:lex "awesome"^^xsd:string .
+
+default:Expensive
+      a       owl:Class ;
+      rdfs:subClassOf default:PriceNegativeSentiment .
+
+default:Phenomenal
+      a       owl:Class ;
+      rdfs:subClassOf default:GenericPositiveSentiment ;
+      default:lex "phenomenal"^^xsd:string .
+
+default:Blurry
+      a       owl:Class ;
+      rdfs:subClassOf default:DisplayNegativeSentiment ;
+      default:lex "blurry"^^xsd:string .
+
+default:Negative
+      a       owl:Class ;
+      rdfs:subClassOf default:SentimentValue .
+
+default:Touchpad
+      a       owl:Class ;
+      rdfs:subClassOf default:MouseMention ;
+      default:lex "touchpad"^^xsd:string .
+
+default:Crash
+      a       owl:Class ;
+      rdfs:subClassOf default:OsMention ;
+      default:lex "hardcrash"^^xsd:string , "crash"^^xsd:string .
+
+default:Resolution
+      a       owl:Class ;
+      rdfs:subClassOf default:DisplayMention ;
+      default:lex "resolution"^^xsd:string .
+
+default:Inexpensive
+      a       owl:Class ;
+      rdfs:subClassOf default:PricePositiveSentiment ;
+      default:lex "inexpensive"^^xsd:string .
+
+default:Thin
+      a       owl:Class ;
+      rdfs:subClassOf default:PortabilityPositiveSentiment ;
+      default:lex "thin"^^xsd:string .
+
+default:Cable
+      a       owl:Class ;
+      rdfs:subClassOf default:PortsMention ;
+      default:lex "wire"^^xsd:string , "cable"^^xsd:string .
+
+default:ControlsPositiveSentiment
+      a       owl:Class ;
+      rdfs:subClassOf default:ControlsMention , default:SentimentMention , default:Positive .
+
+default:Bulky
+      a       owl:Class ;
+      rdfs:subClassOf default:PortabilityNegativeSentiment ;
+      default:lex "bulky"^^xsd:string .
+
+default:Wait
+      a       owl:Class ;
+      rdfs:subClassOf default:SupportMention ;
+      default:lex "wait"^^xsd:string , "waitingtime"^^xsd:string .
+
+default:Key
+      a       owl:Class ;
+      rdfs:subClassOf default:ControlsMention ;
+      default:lex "key"^^xsd:string , "hotkey"^^xsd:string , "button"^^xsd:string .
+
+default:Reasonably
+      a       owl:Class ;
+      rdfs:subClassOf default:PricePositiveSentiment ;
+      default:lex "reasonably"^^xsd:string .
+
+default:Windows
+      a       owl:Class ;
+      rdfs:subClassOf default:OsMention ;
+      default:lex "windows"^^xsd:string , "ios"^^xsd:string .
+
+default:Heavy
+      a       owl:Class ;
+      rdfs:subClassOf default:PortabilityNegativeSentiment ;
+      default:lex "heavy"^^xsd:string .
+
+default:Fabulous
+      a       owl:Class ;
+      rdfs:subClassOf default:GenericPositiveSentiment ;
+      default:lex "fabulous"^^xsd:string .
+
+default:Dusty
+      a       owl:Class ;
+      rdfs:subClassOf default:Fans_coolingNegativeSentiment ;
+      default:lex "dirty"^^xsd:string , "dusty"^^xsd:string .
+
+default:PortsMention
+      a       owl:Class ;
+      rdfs:subClassOf default:AttachmentsMention ;
+      default:lex "slot"^^xsd:string , "port"^^xsd:string .
+
+[]    a       owl:Class ;
+      rdfs:subClassOf default:Negative ;
+      owl:intersectionOf (default:Slow default:SpaceMention) .
+
+default:Hot
+      a       owl:Class ;
+      rdfs:subClassOf default:Fans_coolingNegativeSentiment ;
+      default:lex "hot"^^xsd:string , "warm"^^xsd:string .
+
+default:Cooling
+      a       owl:Class ;
+      rdfs:subClassOf default:Fans_coolingMention ;
+      default:lex "cooling"^^xsd:string .
+
+default:Detail
+      a       owl:Class ;
+      rdfs:subClassOf default:Design_featuresMention ;
+      default:lex "detail"^^xsd:string .
+
+default:ProgramsMention
+      a       owl:Class ;
+      rdfs:subClassOf default:AspectMention ;
+      default:aspect "SOFWARE#OPERATION_PERFORMANCE"^^xsd:string , "SOFWARE#DESIGN_FEATURES"^^xsd:string , "SOFWARE#QUALITY"^^xsd:string , "SOFWARE#GENERAL"^^xsd:string , "SOFWARE#USABILITY"^^xsd:string .
+
+default:Terrible
+      a       owl:Class ;
+      rdfs:subClassOf default:GenericNegativeSentiment ;
+      default:lex "terrible"^^xsd:string .
+
+default:Hp
+      a       owl:Class ;
+      rdfs:subClassOf default:CompanyMention ;
+      default:lex "hp"^^xsd:string .
+
+default:Overpriced
+      a       owl:Class ;
+      rdfs:subClassOf default:PriceNegativeSentiment .
+
+default:Voltage
+      a       owl:Class ;
+      rdfs:subClassOf default:Power_supplyMention ;
+      default:lex "voltage"^^xsd:string .
+
+default:Delivery
+      a       owl:Class ;
+      rdfs:subClassOf default:ShippingMention ;
+      default:lex "delivery"^^xsd:string .
+
+default:Unique
+      a       owl:Class ;
+      rdfs:subClassOf default:GenericPositiveSentiment ;
+      default:lex "unique"^^xsd:string .
+
+default:Enjoyable
+      a       owl:Class ;
+      rdfs:subClassOf default:GenericPositiveSentiment ;
+      default:lex "enjoyable"^^xsd:string .
+
+default:ConnectivityPositiveSentiment
+      a       owl:Class ;
+      rdfs:subClassOf default:SentimentMention , default:ConnectivityMention , default:Positive .
+
+default:Asus
+      a       owl:Class ;
+      rdfs:subClassOf default:CompanyMention ;
+      default:lex "asus"^^xsd:string .
+
+default:Buggy
+      a       owl:Class ;
+      rdfs:subClassOf default:SofwareNegativeSentiment ;
+      default:lex "buggy"^^xsd:string .
+
+[]    a       owl:Class ;
+      rdfs:subClassOf default:Positive ;
+      owl:intersectionOf (default:Fast default:SupportMention) .
+
+default:ShippingMention
+      a       owl:Class ;
+      rdfs:subClassOf default:ServiceMention ;
+      default:aspect "SHIPPING#DESIGN_FEATURES"^^xsd:string , "SHIPPING#PRICE"^^xsd:string , "SHIPPING#GENERAL"^^xsd:string , "SHIPPING#OPERATION_PERFORMANCE"^^xsd:string , "SHIPPING#QUALITY"^^xsd:string , "SHIPPING#USABILITY"^^xsd:string ;
+      default:lex "shipping"^^xsd:string .
+
+default:GenericNeutralSentiment
+      a       owl:Class ;
+      rdfs:subClassOf default:SentimentMention , default:Neutral .
+
+default:Low
+      a       owl:Class ;
+      rdfs:subClassOf default:ContextDependentSentimentMention ;
+      default:lex "little"^^xsd:string , "low"^^xsd:string , "small"^^xsd:string .
+
+default:Positive
+      a       owl:Class ;
+      rdfs:subClassOf default:SentimentValue .
+
+default:Dollar
+      a       owl:Class ;
+      rdfs:subClassOf default:PriceMention ;
+      default:lex "dollar"^^xsd:string , "buck"^^xsd:string .
+
+default:GenericNegativeSentiment
+      a       owl:Class ;
+      rdfs:subClassOf default:SentimentMention , default:Negative .
+
+default:Bad
+      a       owl:Class ;
+      rdfs:subClassOf default:GenericNegativeSentiment ;
+      default:lex "bad"^^xsd:string .
+
+default:Calculation
+      a       owl:Class ;
+      rdfs:subClassOf default:Operation_performanceMention ;
+      default:lex "calculation"^^xsd:string , "operation"^^xsd:string .
+
+default:SofwarePositiveSentiment
+      a       owl:Class ;
+      rdfs:subClassOf default:SofwareMention , default:SentimentMention , default:Positive .
+
+default:Ios
+      a       owl:Class ;
+      rdfs:subClassOf default:OsMention .
+
+default:Defect
+      a       owl:Class ;
+      rdfs:subClassOf default:WarrantyMention ;
+      default:lex "defect"^^xsd:string .
+
+default:GraphicsMention
+      a       owl:Class ;
+      rdfs:subClassOf default:AspectMention ;
+      default:aspect "GRAPHICS#GENERAL"^^xsd:string , "GRAPHICS#OPERATION_PERFORMANCE"^^xsd:string , "GRAPHICS#QUALITY"^^xsd:string , "GRAPHICS#DESIGN_FEATURES"^^xsd:string , "GRAPHICS#USABILITY"^^xsd:string ;
+      default:lex "graphics"^^xsd:string , "visuals"^^xsd:string .
+
+default:Premium
+      a       owl:Class ;
+      rdfs:subClassOf default:GenericPositiveSentiment ;
+      default:lex "premium"^^xsd:string .
+
+default:Weight
+      a       owl:Class ;
+      rdfs:subClassOf default:PortabilityMention ;
+      default:lex "weight"^^xsd:string .
+
+default:Ethernet
+      a       owl:Class ;
+      rdfs:subClassOf default:PortsMention ;
+      default:lex "ethernet"^^xsd:string .
+
+default:Cool
+      a       owl:Class ;
+      rdfs:subClassOf default:Fans_coolingPositiveSentiment ;
+      default:lex "cool"^^xsd:string , "cold"^^xsd:string .
+
+default:_4K
+      a       owl:Class ;
+      rdfs:subClassOf default:Resolution ;
+      default:lex "4K"^^xsd:string .
+
+default:Bug
+      a       owl:Class ;
+      rdfs:subClassOf default:SofwareMention ;
+      default:lex "bug"^^xsd:string .
+
+default:Nice
+      a       owl:Class ;
+      rdfs:subClassOf default:GenericPositiveSentiment ;
+      default:lex "nice"^^xsd:string .
+
+default:PriceNegativeSentiment
+      a       owl:Class ;
+      rdfs:subClassOf default:PriceMention , default:SentimentMention , default:Negative .
+
+default:Horrid
+      a       owl:Class ;
+      rdfs:subClassOf default:GenericNegativeSentiment ;
+      default:lex "horrid"^^xsd:string .
+
+[]    a       owl:Class ;
+      rdfs:subClassOf default:Negative ;
+      owl:intersectionOf (default:Low default:QualityMention) .
+
+default:Refund
+      a       owl:Class ;
+      rdfs:subClassOf default:WarrantyMention ;
+      default:lex "refund"^^xsd:string , "rebate"^^xsd:string .
+
+default:Broken
+      a       owl:Class ;
+      rdfs:subClassOf default:GenericPositiveSentiment ;
+      default:lex "broken"^^xsd:string .
+
+default:Pricey
+      a       owl:Class ;
+      rdfs:subClassOf default:PriceNegativeSentiment .
+
+default:MouseMention
+      a       owl:Class ;
+      rdfs:subClassOf default:ControlsMention ;
+      default:aspect "MOUSE#OPERATION_PERFORMANCE"^^xsd:string , "MOUSE#DESIGN_FEATURES"^^xsd:string , "MOUSE#GENERAL"^^xsd:string , "MOUSE#USABILITY"^^xsd:string , "MOUSE#QUALITY"^^xsd:string ;
+      default:lex "mouse"^^xsd:string .
+
+default:Macbook
+      a       owl:Class ;
+      rdfs:subClassOf default:laptopMention ;
+      default:lex "macbook"^^xsd:string .
+
+default:Brightness
+      a       owl:Class ;
+      rdfs:subClassOf default:DisplayMention ;
+      default:lex "brightness"^^xsd:string .
+
+default:Brand
+      a       owl:Class ;
+      rdfs:subClassOf default:CompanyMention ;
+      default:lex "brand"^^xsd:string .
+
+default:ControlsNegativeSentiment
+      a       owl:Class ;
+      rdfs:subClassOf default:ControlsMention , default:Negative .
+
+default:Error
+      a       owl:Class ;
+      rdfs:subClassOf default:SofwareMention ;
+      default:lex "error"^^xsd:string .
+
+default:AttachmentsMention
+      a       owl:Class ;
+      rdfs:subClassOf default:AspectMention ;
+      default:aspect "PORTS#OPERATION_PERFORMANCE"^^xsd:string , "PORTS#DESIGN_FEATURES"^^xsd:string , "PORTS#GENERAL"^^xsd:string , "PORTS#QUALITY"^^xsd:string , "PORTS#USABILITY"^^xsd:string .
+
+default:CpuMention
+      a       owl:Class ;
+      rdfs:subClassOf default:AspectMention ;
+      default:aspect "CPU#OPERATION_PERFORMANCE"^^xsd:string , "CPU#USABILITY"^^xsd:string , "CPU#QUALITY"^^xsd:string , "CPU#DESIGN_FEATURES"^^xsd:string , "CPU#GENERAL"^^xsd:string ;
+      default:lex "central processing unit"^^xsd:string , "cpu"^^xsd:string , "processor"^^xsd:string .
+
+default:Pleasant
+      a       owl:Class ;
+      rdfs:subClassOf default:GenericPositiveSentiment ;
+      default:lex "pleasant"^^xsd:string .
+
+default:Mechanical
+      a       owl:Class ;
+      rdfs:subClassOf default:ControlsPositiveSentiment .
+
+default:Handy
+      a       owl:Class ;
+      rdfs:subClassOf default:UsabilityPositiveSentiment ;
+      default:lex "handy"^^xsd:string .
+
+default:Fans_coolingMention
+      a       owl:Class ;
+      rdfs:subClassOf default:AspectMention ;
+      default:aspect "FANS_COOLING#GENERAL"^^xsd:string , "FANS_COOLING#DESIGN_FEATURES"^^xsd:string , "FANS_COOLING#OPERATION_PERFORMANCE"^^xsd:string , "FANS_COOLING#USABILITY"^^xsd:string , "FANS_COOLING#QUALITY"^^xsd:string ;
+      default:lex "fan"^^xsd:string , "cooling"^^xsd:string , "fans"^^xsd:string .
+
+default:Ram
+      a       owl:Class ;
+      rdfs:subClassOf default:MemoryMention ;
+      default:lex "ram"^^xsd:string , "vram"^^xsd:string .
+
+default:Innovative
+      a       owl:Class ;
+      rdfs:subClassOf default:GenericPositiveSentiment ;
+      default:lex "innovative"^^xsd:string .
+
+default:Powerful
+      a       owl:Class ;
+      rdfs:subClassOf default:GenericPositiveSentiment ;
+      default:lex "powerful"^^xsd:string .
+
+default:Hold
+      a       owl:Class ;
+      rdfs:subClassOf default:SupportMention ;
+      default:lex "hold"^^xsd:string .
+
+default:DisplayPositiveSentiment
+      a       owl:Class ;
+      rdfs:subClassOf default:SentimentMention , default:Positive , default:DisplayMention .
+
+default:Layout
+      a       owl:Class ;
+      rdfs:subClassOf default:KeyboardMention ;
+      default:lex "layout"^^xsd:string .
+
+default:Cheap
+      a       owl:Class ;
+      rdfs:subClassOf default:PricePositiveSentiment ;
+      default:lex "cheap"^^xsd:string .

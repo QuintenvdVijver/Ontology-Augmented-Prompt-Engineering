@@ -1,0 +1,1901 @@
+# Base: http://www.kimschouten.com/sentiment/restaurant#
+@prefix p1:      <http://www.kimschouten.com/sentiment/restaurant#$> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix default:  <http://www.kimschouten.com/sentiment/restaurant#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+
+default:Skip
+      a       owl:Class ;
+      rdfs:subClassOf default:GenericNegativeAction ;
+      default:lex "skip"^^xsd:string .
+
+default:Decor
+      a       owl:Class ;
+      rdfs:subClassOf default:AmbienceMention ;
+      default:lex "decor"^^xsd:string .
+
+default:UpToPar
+      a       owl:Class ;
+      rdfs:subClassOf default:GenericPositivePropertyMention ;
+      default:lex "up to par"^^xsd:string .
+
+default:Professional
+      a       owl:Class ;
+      rdfs:subClassOf default:ServicePositivePropertyMention ;
+      default:lex "professional"^^xsd:string .
+
+default:Seafood
+      a       owl:Class ;
+      rdfs:subClassOf default:FoodMention ;
+      default:lex "seafood"^^xsd:string .
+
+default:Margarita
+      a       owl:Class ;
+      rdfs:subClassOf default:Cocktail ;
+      default:lex "margarita"^^xsd:string .
+
+default:Host
+      a       owl:Class ;
+      rdfs:subClassOf default:Staff ;
+      default:lex "hostess"^^xsd:string , "host"^^xsd:string .
+
+default:Exceptional
+      a       owl:Class ;
+      rdfs:subClassOf default:GenericPositivePropertyMention ;
+      default:lex "exceptional"^^xsd:string , "exeptional"^^xsd:string .
+
+default:Sangria
+      a       owl:Class ;
+      rdfs:subClassOf default:Wine ;
+      default:lex "sangria"^^xsd:string .
+
+default:Lack
+      a       owl:Class ;
+      rdfs:subClassOf default:GenericNegativeAction ;
+      default:lex "lack"^^xsd:string .
+
+default:Cocktail
+      a       owl:Class ;
+      rdfs:subClassOf default:DrinksMention ;
+      default:lex "cocktail"^^xsd:string .
+
+default:Charming
+      a       owl:Class ;
+      rdfs:subClassOf default:GenericPositivePropertyMention ;
+      default:lex "charming"^^xsd:string .
+
+default:Incredible
+      a       owl:Class ;
+      rdfs:subClassOf default:GenericPositivePropertyMention ;
+      default:lex "incredible"^^xsd:string .
+
+default:Old
+      a       owl:Class ;
+      rdfs:subClassOf default:PropertyMention ;
+      default:lex "old"^^xsd:string .
+
+default:Tasty
+      a       owl:Class ;
+      rdfs:subClassOf default:SustenancePositiveProperty ;
+      default:lex "tasty"^^xsd:string .
+
+default:Fabulous
+      a       owl:Class ;
+      rdfs:subClassOf default:GenericPositivePropertyMention ;
+      default:lex "fabulous"^^xsd:string .
+
+default:Veal
+      a       owl:Class ;
+      rdfs:subClassOf default:Meat ;
+      default:lex "veal"^^xsd:string .
+
+default:Inventive
+      a       owl:Class ;
+      rdfs:subClassOf default:GenericPositivePropertyMention ;
+      default:lex "inventive"^^xsd:string .
+
+[]    a       owl:Class ;
+      rdfs:subClassOf default:Positive ;
+      owl:intersectionOf (default:Rich default:SustenanceMention) .
+
+default:She
+      a       owl:Class ;
+      rdfs:subClassOf default:PersonMention ;
+      default:lex "she"^^xsd:string .
+
+default:Stellar
+      a       owl:Class ;
+      rdfs:subClassOf default:GenericPositivePropertyMention ;
+      default:lex "stellar"^^xsd:string .
+
+default:AmbienceNegativeProperty
+      a       owl:Class ;
+      rdfs:subClassOf default:Negative , default:AmbienceMention , default:PropertyMention ;
+      owl:disjointWith default:AmbiencePositiveProperty .
+
+default:Martini
+      a       owl:Class ;
+      rdfs:subClassOf default:Cocktail ;
+      default:lex "martini"^^xsd:string .
+
+default:Regional
+      a       owl:Class ;
+      rdfs:subClassOf default:FoodMention .
+
+default:Mojito
+      a       owl:Class ;
+      rdfs:subClassOf default:Cocktail ;
+      default:lex "mojito"^^xsd:string .
+
+default:Taste
+      a       owl:Class ;
+      rdfs:subClassOf default:Flavor ;
+      default:lex "taste"^^xsd:string .
+
+default:Upset
+      a       owl:Class ;
+      rdfs:subClassOf default:ServiceNegativeProperty ;
+      default:lex "upset"^^xsd:string .
+
+default:Chef
+      a       owl:Class ;
+      rdfs:subClassOf default:Staff ;
+      default:lex "chef"^^xsd:string .
+
+default:GenericPositiveAction
+      a       owl:Class ;
+      rdfs:subClassOf default:ActionMention , default:Positive .
+
+default:Liquor
+      a       owl:Class ;
+      rdfs:subClassOf default:DrinksMention ;
+      default:lex "liquor"^^xsd:string , "liquer"^^xsd:string , "spirit"^^xsd:string , "spirits"^^xsd:string .
+
+default:They
+      a       owl:Class ;
+      rdfs:subClassOf default:Staff ;
+      default:lex "they"^^xsd:string , "them"^^xsd:string .
+
+default:Town
+      a       owl:Class ;
+      rdfs:subClassOf default:LocationMention ;
+      default:lex "town"^^xsd:string .
+
+default:Thai
+      a       owl:Class ;
+      rdfs:subClassOf default:Regional ;
+      default:lex "thai"^^xsd:string .
+
+default:Inexpensive
+      a       owl:Class ;
+      rdfs:subClassOf default:PricePositivePropertyMention ;
+      default:lex "inexpensive"^^xsd:string .
+
+default:PriceNegativePropertyMention
+      a       owl:Class ;
+      rdfs:subClassOf default:PriceMention , default:Negative , default:PropertyMention ;
+      owl:disjointWith default:PricePositivePropertyMention .
+
+default:Option
+      a       owl:Class ;
+      rdfs:subClassOf default:StyleOptionsMention ;
+      default:lex "option"^^xsd:string .
+
+default:AmbienceMention
+      a       owl:Class ;
+      rdfs:subClassOf default:EntityMention ;
+      default:aspect "AMBIENCE#GENERAL"^^xsd:string ;
+      default:lex "ambiance"^^xsd:string , "ambience"^^xsd:string , "atmosphere"^^xsd:string , "vibe"^^xsd:string , "setting"^^xsd:string .
+
+default:Expensive
+      a       owl:Class ;
+      rdfs:subClassOf default:PriceNegativePropertyMention ;
+      default:lex "expensive"^^xsd:string .
+
+default:Helpful
+      a       owl:Class ;
+      rdfs:subClassOf default:ServicePositivePropertyMention ;
+      default:lex "helpful"^^xsd:string .
+
+default:Block
+      a       owl:Class ;
+      rdfs:subClassOf default:LocationMention ;
+      default:lex "block"^^xsd:string .
+
+default:Great
+      a       owl:Class ;
+      rdfs:subClassOf default:GenericPositivePropertyMention ;
+      default:lex "great"^^xsd:string .
+
+[]    a       owl:Class ;
+      rdfs:subClassOf default:Positive ;
+      owl:intersectionOf (default:Cute default:PersonMention) .
+
+default:Money
+      a       owl:Class ;
+      rdfs:subClassOf default:PriceMention ;
+      default:lex "money"^^xsd:string .
+
+default:EggBenedict
+      a       owl:Class ;
+      rdfs:subClassOf default:Egg ;
+      default:lex "egg benedict"^^xsd:string .
+
+default:Salt
+      a       owl:Class ;
+      rdfs:subClassOf default:Seasoning ;
+      default:lex "salt"^^xsd:string .
+
+default:Groovy
+      a       owl:Class ;
+      rdfs:subClassOf default:AmbiencePositiveProperty ;
+      default:lex "groovy"^^xsd:string .
+
+default:Worthy
+      a       owl:Class ;
+      rdfs:subClassOf default:GenericPositivePropertyMention ;
+      default:lex "worthy"^^xsd:string , "worth"^^xsd:string .
+
+default:Neutral
+      a       owl:Class ;
+      rdfs:subClassOf default:Sentiment .
+
+default:Pudding
+      a       owl:Class ;
+      rdfs:subClassOf default:FoodMention ;
+      default:lex "pudding"^^xsd:string .
+
+default:Chinese
+      a       owl:Class ;
+      rdfs:subClassOf default:Regional ;
+      default:lex "chinese"^^xsd:string .
+
+default:Cake
+      a       owl:Class ;
+      rdfs:subClassOf default:FoodMention ;
+      default:lex "cake"^^xsd:string .
+
+default:Interesting
+      a       owl:Class ;
+      rdfs:subClassOf default:GenericPositivePropertyMention ;
+      default:lex "interesting"^^xsd:string .
+
+default:Business
+      a       owl:Class ;
+      rdfs:subClassOf default:RestaurantMention ;
+      default:lex "business"^^xsd:string .
+
+default:Bargain
+      a       owl:Class ;
+      rdfs:subClassOf default:PriceMention , default:PositiveEntityMention ;
+      default:lex "bargain"^^xsd:string .
+
+default:Lunch
+      a       owl:Class ;
+      rdfs:subClassOf default:MealOccasion ;
+      default:lex "lunch"^^xsd:string .
+
+default:HalfDecent
+      a       owl:Class ;
+      rdfs:subClassOf default:GenericNegativePropertyMention ;
+      default:lex "half decent"^^xsd:string .
+
+default:Salmon
+      a       owl:Class ;
+      rdfs:subClassOf default:Fish ;
+      default:lex "salmon"^^xsd:string .
+
+default:Friend
+      a       owl:Class ;
+      rdfs:subClassOf default:FellowGuest ;
+      default:lex "friend"^^xsd:string .
+
+default:Friendly
+      a       owl:Class ;
+      rdfs:subClassOf default:ServicePositivePropertyMention ;
+      default:lex "friendly"^^xsd:string .
+
+default:Bill
+      a       owl:Class ;
+      rdfs:subClassOf default:PriceMention ;
+      default:lex "bill"^^xsd:string .
+
+default:Overpriced
+      a       owl:Class ;
+      rdfs:subClassOf default:PriceNegativePropertyMention ;
+      default:lex "over-priced"^^xsd:string , "overpriced"^^xsd:string , "overprice"^^xsd:string .
+
+default:Serving
+      a       owl:Class ;
+      rdfs:subClassOf default:MealMention ;
+      default:lex "serving"^^xsd:string .
+
+default:DrinksMention
+      a       owl:Class ;
+      rdfs:subClassOf default:SustenanceMention ;
+      default:aspect "DRINKS#PRICES"^^xsd:string , "DRINKS#STYLE_OPTIONS"^^xsd:string , "DRINKS#QUALITY"^^xsd:string ;
+      default:lex "drink"^^xsd:string .
+
+default:Love
+      a       owl:Class ;
+      rdfs:subClassOf default:GenericPositiveAction ;
+      default:lex "love"^^xsd:string .
+
+default:SustenanceNegativeProperty
+      a       owl:Class ;
+      rdfs:subClassOf default:Negative , default:SustenanceMention , default:PropertyMention ;
+      owl:disjointWith default:SustenancePositiveProperty .
+
+default:Value
+      a       owl:Class ;
+      rdfs:subClassOf default:PriceMention , default:PositiveEntityMention ;
+      default:lex "value"^^xsd:string .
+
+default:Pasta
+      a       owl:Class ;
+      rdfs:subClassOf default:FoodMention ;
+      default:lex "pasta"^^xsd:string .
+
+default:Disappointment
+      a       owl:Class ;
+      rdfs:subClassOf default:ExperienceMention ;
+      default:lex "disappointment"^^xsd:string .
+
+p1:   a       owl:Class ;
+      rdfs:subClassOf default:PriceMention ;
+      default:lex "$"^^xsd:string .
+
+default:I
+      a       owl:Class ;
+      rdfs:subClassOf default:FirstPerson ;
+      default:lex "I"^^xsd:string , "me"^^xsd:string .
+
+default:ServiceNegativeProperty
+      a       owl:Class ;
+      rdfs:subClassOf default:ServiceMention , default:Negative , default:PropertyMention ;
+      owl:disjointWith default:ServicePositivePropertyMention .
+
+default:Recommend
+      a       owl:Class ;
+      rdfs:subClassOf default:GenericPositiveAction ;
+      default:lex "recommand"^^xsd:string , "recommend"^^xsd:string .
+
+default:DimSum
+      a       owl:Class ;
+      rdfs:subClassOf default:FoodMention ;
+      default:lex "dim sum"^^xsd:string .
+
+default:Visit
+      a       owl:Class ;
+      rdfs:subClassOf default:ExperienceMention ;
+      default:lex "visit"^^xsd:string .
+
+default:Steak
+      a       owl:Class ;
+      rdfs:subClassOf default:Meat ;
+      default:lex "steak"^^xsd:string .
+
+[]    a       owl:Class ;
+      rdfs:subClassOf default:Positive ;
+      owl:intersectionOf (default:PriceMention default:Reasonably) .
+
+default:Owner
+      a       owl:Class ;
+      rdfs:subClassOf default:Staff ;
+      default:lex "owner"^^xsd:string .
+
+default:Tapas
+      a       owl:Class ;
+      rdfs:subClassOf default:FoodMention ;
+      default:lex "tapas"^^xsd:string .
+
+default:Professionalism
+      a       owl:Class ;
+      rdfs:subClassOf default:ServicePositivePropertyMention ;
+      default:lex "professionalism"^^xsd:string .
+
+default:Inside
+      a       owl:Class ;
+      rdfs:subClassOf default:AmbienceMention ;
+      default:lex "inside"^^xsd:string .
+
+default:Fun
+      a       owl:Class ;
+      rdfs:subClassOf default:GenericPositivePropertyMention ;
+      default:lex "fun"^^xsd:string .
+
+default:Apple
+      a       owl:Class ;
+      rdfs:subClassOf default:Fruit ;
+      default:lex "apple"^^xsd:string .
+
+default:Guest
+      a       owl:Class ;
+      rdfs:subClassOf default:PersonMention ;
+      default:lex "guest"^^xsd:string .
+
+default:Salad
+      a       owl:Class ;
+      rdfs:subClassOf default:FoodMention ;
+      default:lex "salad"^^xsd:string .
+
+default:DiningArea
+      a       owl:Class ;
+      rdfs:subClassOf default:AmbienceMention ;
+      default:lex "dining area"^^xsd:string .
+
+default:Creative
+      a       owl:Class ;
+      rdfs:subClassOf default:GenericPositivePropertyMention ;
+      default:lex "creative"^^xsd:string .
+
+default:Selection
+      a       owl:Class ;
+      rdfs:subClassOf default:StyleOptionsMention ;
+      default:lex "selection"^^xsd:string .
+
+default:Dreamy
+      a       owl:Class ;
+      rdfs:subClassOf default:AmbiencePositiveProperty ;
+      default:lex "dreamy"^^xsd:string .
+
+default:Dry
+      a       owl:Class ;
+      rdfs:subClassOf default:PropertyMention ;
+      default:lex "dry"^^xsd:string .
+
+default:Edamame
+      a       owl:Class ;
+      rdfs:subClassOf default:Vegetable ;
+      default:lex "edamame"^^xsd:string .
+
+default:Guy
+      a       owl:Class ;
+      rdfs:subClassOf default:PersonMention ;
+      default:lex "guy"^^xsd:string .
+
+default:Banana
+      a       owl:Class ;
+      rdfs:subClassOf default:Fruit ;
+      default:lex "banana"^^xsd:string .
+
+default:Spot
+      a       owl:Class ;
+      rdfs:subClassOf default:LocationMention ;
+      default:lex "spot"^^xsd:string .
+
+default:Average
+      a       owl:Class ;
+      rdfs:subClassOf default:PropertyMention ;
+      default:lex "average"^^xsd:string .
+
+default:Crust
+      a       owl:Class ;
+      rdfs:subClassOf default:Flavor ;
+      default:lex "crust"^^xsd:string .
+
+default:PriceMention
+      a       owl:Class ;
+      rdfs:subClassOf default:EntityMention ;
+      default:aspect "RESTAURANT#PRICES"^^xsd:string , "DRINKS#PRICES"^^xsd:string , "FOOD#PRICES"^^xsd:string ;
+      default:lex "pricing"^^xsd:string , "price"^^xsd:string .
+
+default:Street
+      a       owl:Class ;
+      rdfs:subClassOf default:LocationMention ;
+      default:lex "street"^^xsd:string .
+
+default:Entree
+      a       owl:Class ;
+      rdfs:subClassOf default:MealParts ;
+      default:lex "entree"^^xsd:string .
+
+[]    a       owl:Class ;
+      rdfs:subClassOf default:Positive ;
+      owl:intersectionOf (default:Extensive default:StyleOptionsMention) .
+
+default:Disappoint
+      a       owl:Class ;
+      rdfs:subClassOf default:GenericNegativeAction ;
+      default:lex "dissappointed"^^xsd:string , "disappoint"^^xsd:string , "disappointed"^^xsd:string , "disappointing"^^xsd:string .
+
+default:Yummy
+      a       owl:Class ;
+      rdfs:subClassOf default:SustenancePositiveProperty ;
+      default:lex "yummy"^^xsd:string .
+
+default:Father
+      a       owl:Class ;
+      rdfs:subClassOf default:FellowGuest ;
+      default:lex "father"^^xsd:string .
+
+default:Swordfish
+      a       owl:Class ;
+      rdfs:subClassOf default:Fish ;
+      default:lex "swordfish"^^xsd:string .
+
+default:Wonderful
+      a       owl:Class ;
+      rdfs:subClassOf default:GenericPositivePropertyMention ;
+      default:lex "wonderful"^^xsd:string .
+
+default:Stress
+      a       owl:Class ;
+      rdfs:subClassOf default:ServiceNegativeAction ;
+      default:lex "stress"^^xsd:string .
+
+default:Inconsistent
+      a       owl:Class ;
+      rdfs:subClassOf default:GenericNegativePropertyMention ;
+      default:lex "inconsistent"^^xsd:string .
+
+default:MainCourse
+      a       owl:Class ;
+      rdfs:subClassOf default:Course ;
+      default:lex "main"^^xsd:string , "main course"^^xsd:string .
+
+default:Recommendation
+      a       owl:Class ;
+      rdfs:subClassOf default:ExperienceMention ;
+      default:lex "recommendation"^^xsd:string .
+
+default:Place
+      a       owl:Class ;
+      rdfs:subClassOf default:RestaurantMention ;
+      default:lex "place"^^xsd:string .
+
+default:Area
+      a       owl:Class ;
+      rdfs:subClassOf default:LocationMention ;
+      default:lex "area"^^xsd:string .
+
+default:Unwelcoming
+      a       owl:Class ;
+      rdfs:subClassOf default:ServiceNegativeProperty ;
+      default:lex "unwelcoming"^^xsd:string .
+
+default:Awful
+      a       owl:Class ;
+      rdfs:subClassOf default:GenericNegativePropertyMention ;
+      default:lex "awful"^^xsd:string .
+
+default:Fantastic
+      a       owl:Class ;
+      rdfs:subClassOf default:GenericPositivePropertyMention ;
+      default:lex "fantastic"^^xsd:string .
+
+default:Chicken
+      a       owl:Class ;
+      rdfs:subClassOf default:Meat ;
+      default:lex "chicken"^^xsd:string .
+
+default:Pizza
+      a       owl:Class ;
+      rdfs:subClassOf default:FoodMention ;
+      default:lex "pizza"^^xsd:string .
+
+default:Fair
+      a       owl:Class ;
+      rdfs:subClassOf default:PricePositivePropertyMention ;
+      default:lex "fair"^^xsd:string .
+
+default:AmbiencePositiveProperty
+      a       owl:Class ;
+      rdfs:subClassOf default:Positive , default:AmbienceMention , default:PropertyMention .
+
+default:ChowSee
+      a       owl:Class ;
+      rdfs:subClassOf default:Noodle ;
+      default:lex "chow see"^^xsd:string .
+
+default:Bite
+      a       owl:Class ;
+      rdfs:subClassOf default:Serving ;
+      default:lex "bite"^^xsd:string .
+
+[]    a       owl:Class ;
+      rdfs:subClassOf default:Positive ;
+      owl:intersectionOf (default:Fresh default:SustenanceMention) .
+
+default:aspect
+      a       owl:AnnotationProperty , owl:DatatypeProperty .
+
+default:Difficult
+      a       owl:Class ;
+      rdfs:subClassOf default:GenericNegativePropertyMention ;
+      default:lex "difficult"^^xsd:string .
+
+default:StatueOfLiberty
+      a       owl:Class ;
+      rdfs:subClassOf default:NamedLocationMention ;
+      default:lex "statue of liberty"^^xsd:string .
+
+default:Accommodate
+      a       owl:Class ;
+      rdfs:subClassOf default:ServicePositiveAction ;
+      default:lex "accomodate"^^xsd:string , "accomodating"^^xsd:string , "accommodate"^^xsd:string .
+
+default:Girlfriend
+      a       owl:Class ;
+      rdfs:subClassOf default:FellowGuest ;
+      default:lex "girlfriend"^^xsd:string .
+
+default:Glad
+      a       owl:Class ;
+      rdfs:subClassOf default:GenericPositivePropertyMention ;
+      default:lex "glad"^^xsd:string .
+
+default:Fine
+      a       owl:Class ;
+      rdfs:subClassOf default:GenericPositivePropertyMention ;
+      default:lex "fine"^^xsd:string .
+
+default:House
+      a       owl:Class ;
+      rdfs:subClassOf default:RestaurantMention ;
+      default:lex "house"^^xsd:string .
+
+default:FellowGuest
+      a       owl:Class ;
+      rdfs:subClassOf default:PersonMention .
+
+default:Awesome
+      a       owl:Class ;
+      rdfs:subClassOf default:GenericPositivePropertyMention ;
+      default:lex "awesome"^^xsd:string .
+
+default:Favorite
+      a       owl:Class ;
+      rdfs:subClassOf default:GenericPositivePropertyMention ;
+      default:lex "favorite"^^xsd:string .
+
+[]    a       owl:Class ;
+      rdfs:subClassOf default:Negative ;
+      owl:intersectionOf (default:Cheap default:SustenanceMention) .
+
+default:Minnow
+      a       owl:Class ;
+      rdfs:subClassOf default:Fish ;
+      default:lex "minnow"^^xsd:string .
+
+default:Pricey
+      a       owl:Class ;
+      rdfs:subClassOf default:PriceNegativePropertyMention ;
+      default:lex "pricy"^^xsd:string , "pricey"^^xsd:string .
+
+default:He
+      a       owl:Class ;
+      rdfs:subClassOf default:PersonMention ;
+      default:lex "he"^^xsd:string .
+
+default:Affordable
+      a       owl:Class ;
+      rdfs:subClassOf default:PricePositivePropertyMention ;
+      default:lex "affordable"^^xsd:string .
+
+default:Fresh
+      a       owl:Class ;
+      rdfs:subClassOf default:PropertyMention ;
+      default:lex "fresher"^^xsd:string , "fresh"^^xsd:string .
+
+default:Cozy
+      a       owl:Class ;
+      rdfs:subClassOf default:AmbiencePositiveProperty ;
+      default:lex "cozy"^^xsd:string .
+
+default:ActionMention
+      a       owl:Class ;
+      rdfs:subClassOf default:Mention .
+
+default:Hour
+      a       owl:Class ;
+      rdfs:subClassOf default:TimeMention ;
+      default:lex "hour"^^xsd:string .
+
+default:StyleOptionsMention
+      a       owl:Class ;
+      rdfs:subClassOf default:EntityMention ;
+      default:aspect "FOOD#STYLE_OPTIONS"^^xsd:string , "DRINKS#STYLE_OPTIONS"^^xsd:string .
+
+default:SustenancePositiveProperty
+      a       owl:Class ;
+      rdfs:subClassOf default:Positive , default:SustenanceMention , default:PropertyMention .
+
+default:Noodle
+      a       owl:Class ;
+      rdfs:subClassOf default:FoodMention ;
+      default:lex "noodle"^^xsd:string , "chow"^^xsd:string .
+
+default:ChowFun
+      a       owl:Class ;
+      rdfs:subClassOf default:Noodle ;
+      default:lex "chow fun"^^xsd:string .
+
+[]    a       owl:Class ;
+      rdfs:subClassOf default:Negative ;
+      owl:intersectionOf (default:Average default:SustenanceMention) .
+
+default:Intimate
+      a       owl:Class ;
+      rdfs:subClassOf default:AmbiencePositiveProperty ;
+      default:lex "intimate"^^xsd:string .
+
+[]    a       owl:Class ;
+      rdfs:subClassOf default:Negative ;
+      owl:intersectionOf (default:Serving default:Small) .
+
+default:GreetAndSeat
+      a       owl:Class ;
+      rdfs:subClassOf default:Staff ;
+      default:lex "people who greet and seat"^^xsd:string , "greet and seat"^^xsd:string .
+
+default:Appetizer
+      a       owl:Class ;
+      rdfs:subClassOf default:MealParts ;
+      default:lex "appetizer"^^xsd:string .
+
+default:ServiceNegativeAction
+      a       owl:Class ;
+      rdfs:subClassOf default:ActionMention , default:ServiceMention , default:Negative ;
+      owl:disjointWith default:ServicePositiveAction .
+
+default:Authentic
+      a       owl:Class ;
+      rdfs:subClassOf default:GenericPositivePropertyMention ;
+      default:lex "authentic"^^xsd:string .
+
+default:SideDish
+      a       owl:Class ;
+      rdfs:subClassOf default:MealParts ;
+      default:lex "side dish"^^xsd:string , "side"^^xsd:string .
+
+default:Soup
+      a       owl:Class ;
+      rdfs:subClassOf default:FoodMention ;
+      default:lex "soup"^^xsd:string .
+
+default:Minute
+      a       owl:Class ;
+      rdfs:subClassOf default:TimeMention ;
+      default:lex "minute"^^xsd:string .
+
+default:Sceney
+      a       owl:Class ;
+      rdfs:subClassOf default:AmbiencePositiveProperty ;
+      default:lex "sceney"^^xsd:string .
+
+default:Customer
+      a       owl:Class ;
+      rdfs:subClassOf default:PersonMention ;
+      default:lex "customer"^^xsd:string .
+
+default:Mother
+      a       owl:Class ;
+      rdfs:subClassOf default:FellowGuest ;
+      default:lex "mother"^^xsd:string .
+
+default:Cheap
+      a       owl:Class ;
+      rdfs:subClassOf default:PricePositivePropertyMention , default:PropertyMention ;
+      default:lex "cheap"^^xsd:string .
+
+default:Trip
+      a       owl:Class ;
+      rdfs:subClassOf default:ExperienceMention ;
+      default:lex "trip"^^xsd:string .
+
+default:City
+      a       owl:Class ;
+      rdfs:subClassOf default:LocationMention ;
+      default:lex "city"^^xsd:string .
+
+default:High
+      a       owl:Class ;
+      rdfs:subClassOf default:PropertyMention ;
+      default:lex "high"^^xsd:string .
+
+default:Beer
+      a       owl:Class ;
+      rdfs:subClassOf default:DrinksMention ;
+      default:lex "beer"^^xsd:string .
+
+default:Impressive
+      a       owl:Class ;
+      rdfs:subClassOf default:GenericPositivePropertyMention ;
+      default:lex "impressive"^^xsd:string .
+
+default:Pastrami
+      a       owl:Class ;
+      rdfs:subClassOf default:Meat ;
+      default:lex "pastrami"^^xsd:string .
+
+default:Quality
+      a       owl:Class ;
+      rdfs:subClassOf default:ExperienceMention ;
+      default:lex "quality"^^xsd:string .
+
+default:FirstPerson
+      a       owl:Class ;
+      rdfs:subClassOf default:PersonMention .
+
+default:ServicePositiveAction
+      a       owl:Class ;
+      rdfs:subClassOf default:ActionMention , default:ServiceMention , default:Negative .
+
+default:Flavor
+      a       owl:Class ;
+      rdfs:subClassOf default:SustenanceMention ;
+      default:lex "flavor"^^xsd:string , "flavoring"^^xsd:string .
+
+default:Again
+      a       owl:Class ;
+      rdfs:subClassOf default:ExperienceMention ;
+      default:lex "again"^^xsd:string .
+
+default:TooAuthenticForMe
+      a       owl:Class ;
+      rdfs:subClassOf default:GenericNegativePropertyMention ;
+      default:lex "too-authentic-for-me"^^xsd:string .
+
+default:NewYork
+      a       owl:Class ;
+      rdfs:subClassOf default:NamedLocationMention ;
+      default:lex "new york"^^xsd:string , "ny"^^xsd:string , "nyc"^^xsd:string .
+
+default:Beautiful
+      a       owl:Class ;
+      rdfs:subClassOf default:GenericPositivePropertyMention .
+
+default:Occasion
+      a       owl:Class ;
+      rdfs:subClassOf default:ExperienceMention ;
+      default:lex "occasion"^^xsd:string .
+
+default:Welcoming
+      a       owl:Class ;
+      rdfs:subClassOf default:ServicePositivePropertyMention ;
+      default:lex "welcoming"^^xsd:string .
+
+default:Table
+      a       owl:Class ;
+      rdfs:subClassOf default:AmbienceMention ;
+      default:lex "table"^^xsd:string .
+
+default:Brunch
+      a       owl:Class ;
+      rdfs:subClassOf default:MealOccasion ;
+      default:lex "brunch"^^xsd:string .
+
+default:PricePositivePropertyMention
+      a       owl:Class ;
+      rdfs:subClassOf default:Positive , default:PriceMention , default:PropertyMention .
+
+default:Bar
+      a       owl:Class ;
+      rdfs:subClassOf default:RestaurantMention ;
+      default:lex "bar"^^xsd:string .
+
+default:Pleasant
+      a       owl:Class ;
+      rdfs:subClassOf default:GenericPositivePropertyMention ;
+      default:lex "pleasant"^^xsd:string .
+
+default:Design
+      a       owl:Class ;
+      rdfs:subClassOf default:AmbienceMention ;
+      default:lex "design"^^xsd:string .
+
+[]    a       owl:Class ;
+      rdfs:subClassOf default:Positive ;
+      owl:intersectionOf (default:AmbienceMention default:Fresh) .
+
+default:Seasoning
+      a       owl:Class ;
+      rdfs:subClassOf default:Flavor , default:Ingredient ;
+      default:lex "seasoning"^^xsd:string .
+
+default:Sake
+      a       owl:Class ;
+      rdfs:subClassOf default:DrinksMention ;
+      default:lex "sake"^^xsd:string .
+
+default:Excellent
+      a       owl:Class ;
+      rdfs:subClassOf default:GenericPositivePropertyMention ;
+      default:lex "excellent"^^xsd:string .
+
+default:Decent
+      a       owl:Class ;
+      rdfs:subClassOf default:GenericPositivePropertyMention ;
+      default:lex "decent"^^xsd:string .
+
+default:Chocolate
+      a       owl:Class ;
+      rdfs:subClassOf default:FoodMention ;
+      default:lex "chocolate"^^xsd:string .
+
+default:RestaurantMention
+      a       owl:Class ;
+      rdfs:subClassOf default:EntityMention ;
+      default:aspect "RESTAURANT#GENERAL"^^xsd:string .
+
+default:Sandwich
+      a       owl:Class ;
+      rdfs:subClassOf default:FoodMention ;
+      default:lex "sandwich"^^xsd:string .
+
+default:Busy
+      a       owl:Class ;
+      rdfs:subClassOf default:PropertyMention ;
+      default:lex "busy"^^xsd:string .
+
+default:Husband
+      a       owl:Class ;
+      rdfs:subClassOf default:FellowGuest ;
+      default:lex "husband"^^xsd:string .
+
+default:Overrated
+      a       owl:Class ;
+      rdfs:subClassOf default:GenericNegativePropertyMention ;
+      default:lex "overrated"^^xsd:string .
+
+default:Chic
+      a       owl:Class ;
+      rdfs:subClassOf default:AmbiencePositiveProperty ;
+      default:lex "chic"^^xsd:string .
+
+default:Respect
+      a       owl:Class ;
+      rdfs:subClassOf default:GenericPositiveAction ;
+      default:lex "respect"^^xsd:string .
+
+default:PropertyMention
+      a       owl:Class ;
+      rdfs:subClassOf default:Mention .
+
+default:Best
+      a       owl:Class ;
+      rdfs:subClassOf default:GenericPositivePropertyMention ;
+      default:lex "best"^^xsd:string .
+
+default:Filet
+      a       owl:Class ;
+      rdfs:subClassOf default:Meat , default:Fish ;
+      default:lex "filet"^^xsd:string .
+
+default:Cream
+      a       owl:Class ;
+      rdfs:subClassOf default:FoodMention ;
+      default:lex "cream"^^xsd:string .
+
+default:Room
+      a       owl:Class ;
+      rdfs:subClassOf default:AmbienceMention ;
+      default:lex "room"^^xsd:string .
+
+[]    a       owl:Class ;
+      rdfs:subClassOf default:Positive ;
+      owl:intersectionOf (default:PriceMention default:Small) .
+
+default:Sugar
+      a       owl:Class ;
+      rdfs:subClassOf default:Seasoning ;
+      default:lex "sugar"^^xsd:string .
+
+default:Daiquiri
+      a       owl:Class ;
+      rdfs:subClassOf default:Cocktail ;
+      default:lex "daiquiri"^^xsd:string , "daiquiry"^^xsd:string .
+
+default:Cafe
+      a       owl:Class ;
+      rdfs:subClassOf default:RestaurantMention ;
+      default:lex "cafe"^^xsd:string .
+
+default:LocationMention
+      a       owl:Class ;
+      rdfs:subClassOf default:EntityMention ;
+      default:aspect "LOCATION#GENERAL"^^xsd:string ;
+      default:lex "location"^^xsd:string .
+
+[]    a       owl:Class ;
+      rdfs:subClassOf default:Positive ;
+      owl:intersectionOf (default:Cheap default:PriceMention) .
+
+default:Lawn
+      a       owl:Class ;
+      rdfs:subClassOf default:LocationMention ;
+      default:lex "lawn"^^xsd:string .
+
+default:Experience
+      a       owl:Class ;
+      rdfs:subClassOf default:ExperienceMention ;
+      default:lex "experience"^^xsd:string .
+
+default:Fiance
+      a       owl:Class ;
+      rdfs:subClassOf default:FellowGuest ;
+      default:lex "fiance"^^xsd:string .
+
+default:Cool
+      a       owl:Class ;
+      rdfs:subClassOf default:AmbiencePositiveProperty ;
+      default:lex "cool"^^xsd:string .
+
+default:Village
+      a       owl:Class ;
+      rdfs:subClassOf default:LocationMention ;
+      default:lex "village"^^xsd:string .
+
+default:Sushi
+      a       owl:Class ;
+      rdfs:subClassOf default:Seafood ;
+      default:lex "sushi"^^xsd:string .
+
+default:Guacamole
+      a       owl:Class ;
+      rdfs:subClassOf default:Vegetable ;
+      default:lex "guacamole"^^xsd:string .
+
+default:Tea
+      a       owl:Class ;
+      rdfs:subClassOf default:DrinksMention ;
+      default:lex "tea"^^xsd:string .
+
+default:Inexpertly
+      a       owl:Class ;
+      rdfs:subClassOf default:GenericNegativePropertyMention ;
+      default:lex "inexpertly"^^xsd:string .
+
+[]    a       owl:Class ;
+      rdfs:subClassOf default:Positive ;
+      owl:intersectionOf (default:Average default:PriceMention) .
+
+default:Mention
+      a       owl:Class .
+
+[]    a       owl:Class ;
+      rdfs:subClassOf default:Positive ;
+      owl:intersectionOf (default:AmbienceMention default:Rich) .
+
+default:FoodRoll
+      a       owl:Class ;
+      rdfs:subClassOf default:FoodMention ;
+      default:lex "roll"^^xsd:string , "food roll"^^xsd:string .
+
+default:Unique
+      a       owl:Class ;
+      rdfs:subClassOf default:GenericPositivePropertyMention ;
+      default:lex "unique"^^xsd:string .
+
+default:Surpise
+      a       owl:Class ;
+      rdfs:subClassOf default:ExperienceMention ;
+      default:lex "surprise"^^xsd:string .
+
+default:Classy
+      a       owl:Class ;
+      rdfs:subClassOf default:AmbiencePositiveProperty ;
+      default:lex "classy"^^xsd:string .
+
+default:Horrible
+      a       owl:Class ;
+      rdfs:subClassOf default:GenericNegativePropertyMention ;
+      default:lex "horrible"^^xsd:string .
+
+default:Dessert
+      a       owl:Class ;
+      rdfs:subClassOf default:MealParts ;
+      default:lex "dessert"^^xsd:string .
+
+default:Plate
+      a       owl:Class ;
+      rdfs:subClassOf default:Serving ;
+      default:lex "plate"^^xsd:string .
+
+default:Cheese
+      a       owl:Class ;
+      rdfs:subClassOf default:FoodMention ;
+      default:lex "cheese"^^xsd:string .
+
+default:Pepper
+      a       owl:Class ;
+      rdfs:subClassOf default:Seasoning ;
+      default:lex "pepper"^^xsd:string .
+
+default:Manhattan
+      a       owl:Class ;
+      rdfs:subClassOf default:NamedLocationMention ;
+      default:lex "manhattan"^^xsd:string .
+
+default:Delivery
+      a       owl:Class ;
+      rdfs:subClassOf default:ServiceMention ;
+      default:lex "delivery"^^xsd:string .
+
+default:Cold
+      a       owl:Class ;
+      rdfs:subClassOf default:PropertyMention ;
+      default:lex "cold"^^xsd:string .
+
+default:Worst
+      a       owl:Class ;
+      rdfs:subClassOf default:GenericNegativePropertyMention ;
+      default:lex "worst"^^xsd:string .
+
+default:Pear
+      a       owl:Class ;
+      rdfs:subClassOf default:Fruit ;
+      default:lex "pear"^^xsd:string .
+
+default:Bad
+      a       owl:Class ;
+      rdfs:subClassOf default:GenericNegativePropertyMention ;
+      default:lex "bad"^^xsd:string , "badly"^^xsd:string .
+
+default:MealOccasion
+      a       owl:Class ;
+      rdfs:subClassOf default:MealMention .
+
+default:Uncomfortable
+      a       owl:Class ;
+      rdfs:subClassOf default:GenericNegativePropertyMention ;
+      default:lex "uncomfortable"^^xsd:string .
+
+default:Date
+      a       owl:Class ;
+      rdfs:subClassOf default:FellowGuest ;
+      default:lex "date"^^xsd:string .
+
+default:Nice
+      a       owl:Class ;
+      rdfs:subClassOf default:GenericPositivePropertyMention ;
+      default:lex "nice"^^xsd:string .
+
+default:Rice
+      a       owl:Class ;
+      rdfs:subClassOf default:FoodMention ;
+      default:lex "rice"^^xsd:string .
+
+default:ExperienceMention
+      a       owl:Class ;
+      rdfs:subClassOf default:EntityMention ;
+      default:aspect "RESTAURANT#MISCELLANEOUS"^^xsd:string .
+
+default:Tomato
+      a       owl:Class ;
+      rdfs:subClassOf default:Vegetable ;
+      default:lex "tomato"^^xsd:string .
+
+default:Hideous
+      a       owl:Class ;
+      rdfs:subClassOf default:GenericNegativePropertyMention ;
+      default:lex "hideous"^^xsd:string .
+
+default:List
+      a       owl:Class ;
+      rdfs:subClassOf default:StyleOptionsMention ;
+      default:lex "list"^^xsd:string .
+
+[]    a       owl:Class ;
+      rdfs:subClassOf default:Negative ;
+      owl:intersectionOf (default:FoodMention default:Old) .
+
+default:Lemon
+      a       owl:Class ;
+      rdfs:subClassOf default:Fruit ;
+      default:lex "lemon"^^xsd:string .
+
+default:Time
+      a       owl:Class ;
+      rdfs:subClassOf default:ExperienceMention ;
+      default:lex "time"^^xsd:string .
+
+default:Problem
+      a       owl:Class ;
+      rdfs:subClassOf default:NegativeEntityMention ;
+      default:lex "problem"^^xsd:string .
+
+default:Manager
+      a       owl:Class ;
+      rdfs:subClassOf default:Staff ;
+      default:lex "manager"^^xsd:string .
+
+default:Boyfriend
+      a       owl:Class ;
+      rdfs:subClassOf default:FellowGuest ;
+      default:lex "boyfriend"^^xsd:string .
+
+default:lex
+      a       owl:AnnotationProperty , owl:DatatypeProperty .
+
+default:TimeMention
+      a       owl:Class ;
+      rdfs:subClassOf default:EntityMention .
+
+default:Clean
+      a       owl:Class ;
+      rdfs:subClassOf default:AmbiencePositiveProperty ;
+      default:lex "clean"^^xsd:string .
+
+default:Dumpling
+      a       owl:Class ;
+      rdfs:subClassOf default:FoodMention ;
+      default:lex "dunpling"^^xsd:string .
+
+default:Mediocre
+      a       owl:Class ;
+      rdfs:subClassOf default:GenericNegativePropertyMention ;
+      default:lex "mediocre"^^xsd:string .
+
+default:Panini
+      a       owl:Class ;
+      rdfs:subClassOf default:Sandwich ;
+      default:lex "panini"^^xsd:string .
+
+default:Passable
+      a       owl:Class ;
+      rdfs:subClassOf default:GenericPositivePropertyMention ;
+      default:lex "passable"^^xsd:string .
+
+default:Bedford
+      a       owl:Class ;
+      rdfs:subClassOf default:NamedLocationMention ;
+      default:lex "bedford"^^xsd:string .
+
+default:Pimento
+      a       owl:Class ;
+      rdfs:subClassOf default:Vegetable ;
+      default:lex "pimento"^^xsd:string .
+
+default:Wine
+      a       owl:Class ;
+      rdfs:subClassOf default:DrinksMention ;
+      default:lex "wine"^^xsd:string .
+
+default:Conversation
+      a       owl:Class ;
+      rdfs:subClassOf default:AmbienceMention ;
+      default:lex "conversation"^^xsd:string .
+
+default:Dump
+      a       owl:Class ;
+      rdfs:subClassOf default:ServiceNegativeAction ;
+      default:lex "dump"^^xsd:string .
+
+default:Dish
+      a       owl:Class ;
+      rdfs:subClassOf default:Serving ;
+      default:lex "dish"^^xsd:string .
+
+default:NegativeEntityMention
+      a       owl:Class ;
+      rdfs:subClassOf default:Negative , default:EntityMention .
+
+default:Outside
+      a       owl:Class ;
+      rdfs:subClassOf default:AmbienceMention ;
+      default:lex "outdoor"^^xsd:string , "outside"^^xsd:string , "outdoors"^^xsd:string .
+
+default:Lukewarm
+      a       owl:Class ;
+      rdfs:subClassOf default:SustenanceNegativeProperty ;
+      default:lex "luke warm"^^xsd:string , "lukewarm"^^xsd:string .
+
+default:You
+      a       owl:Class ;
+      rdfs:subClassOf default:PersonMention ;
+      default:lex "you"^^xsd:string .
+
+default:Patio
+      a       owl:Class ;
+      rdfs:subClassOf default:AmbienceMention ;
+      default:lex "patio"^^xsd:string .
+
+default:Enjoy
+      a       owl:Class ;
+      rdfs:subClassOf default:GenericPositiveAction ;
+      default:lex "enjoy"^^xsd:string .
+
+default:Complaint
+      a       owl:Class ;
+      rdfs:subClassOf default:NegativeEntityMention ;
+      default:lex "complaint"^^xsd:string .
+
+default:ServicePositivePropertyMention
+      a       owl:Class ;
+      rdfs:subClassOf default:Positive , default:ServiceMention , default:PropertyMention .
+
+default:Fruit
+      a       owl:Class ;
+      rdfs:subClassOf default:FoodMention ;
+      default:lex "fruit"^^xsd:string .
+
+default:Big
+      a       owl:Class ;
+      rdfs:subClassOf default:PropertyMention ;
+      default:lex "big"^^xsd:string .
+
+default:Terrace
+      a       owl:Class ;
+      rdfs:subClassOf default:AmbienceMention ;
+      default:lex "terrace"^^xsd:string .
+
+default:GenericNegativePropertyMention
+      a       owl:Class ;
+      rdfs:subClassOf default:Negative , default:PropertyMention ;
+      owl:disjointWith default:GenericPositivePropertyMention .
+
+default:Brasserie
+      a       owl:Class ;
+      rdfs:subClassOf default:RestaurantMention ;
+      default:lex "brasserie"^^xsd:string .
+
+default:Reservation
+      a       owl:Class ;
+      rdfs:subClassOf default:ServiceMention ;
+      default:lex "reservation"^^xsd:string .
+
+default:Vegetable
+      a       owl:Class ;
+      rdfs:subClassOf default:FoodMention ;
+      default:lex "vegetable"^^xsd:string .
+
+default:Lamb
+      a       owl:Class ;
+      rdfs:subClassOf default:Meat ;
+      default:lex "lamb"^^xsd:string .
+
+default:NamedLocationMention
+      a       owl:Class ;
+      rdfs:subClassOf default:LocationMention .
+
+default:Rich
+      a       owl:Class ;
+      rdfs:subClassOf default:PropertyMention ;
+      default:lex "rich"^^xsd:string .
+
+default:IndoChinese
+      a       owl:Class ;
+      rdfs:subClassOf default:Regional ;
+      default:lex "indo-chinese"^^xsd:string .
+
+default:Order
+      a       owl:Class ;
+      rdfs:subClassOf default:ServiceMention ;
+      default:lex "order"^^xsd:string .
+
+default:Lobster
+      a       owl:Class ;
+      rdfs:subClassOf default:Seafood ;
+      default:lex "lobster"^^xsd:string .
+
+default:Fish
+      a       owl:Class ;
+      rdfs:subClassOf default:Seafood ;
+      default:lex "fish"^^xsd:string .
+
+default:Innovative
+      a       owl:Class ;
+      rdfs:subClassOf default:GenericPositivePropertyMention ;
+      default:lex "innovative"^^xsd:string .
+
+default:PositiveEntityMention
+      a       owl:Class ;
+      rdfs:subClassOf default:Positive , default:EntityMention .
+
+default:Amazing
+      a       owl:Class ;
+      rdfs:subClassOf default:GenericPositivePropertyMention ;
+      default:lex "amazing"^^xsd:string .
+
+default:Bagel
+      a       owl:Class ;
+      rdfs:subClassOf default:FoodMention ;
+      default:lex "bagel"^^xsd:string .
+
+default:GreenTea
+      a       owl:Class ;
+      rdfs:subClassOf default:Tea ;
+      default:lex "green tea"^^xsd:string .
+
+default:Good
+      a       owl:Class ;
+      rdfs:subClassOf default:GenericPositivePropertyMention ;
+      default:lex "good"^^xsd:string .
+
+default:Music
+      a       owl:Class ;
+      rdfs:subClassOf default:AmbienceMention ;
+      default:lex "music"^^xsd:string .
+
+default:EntityMention
+      a       owl:Class ;
+      rdfs:subClassOf default:Mention .
+
+default:Heineken
+      a       owl:Class ;
+      rdfs:subClassOf default:Beer ;
+      default:lex "heineken"^^xsd:string .
+
+default:Bland
+      a       owl:Class ;
+      rdfs:subClassOf default:GenericNegativePropertyMention ;
+      default:lex "bland"^^xsd:string .
+
+default:Champagne
+      a       owl:Class ;
+      rdfs:subClassOf default:Wine ;
+      default:lex "champagne"^^xsd:string .
+
+default:We
+      a       owl:Class ;
+      rdfs:subClassOf default:FirstPerson ;
+      default:lex "we"^^xsd:string , "us"^^xsd:string .
+
+default:Rudeness
+      a       owl:Class ;
+      rdfs:subClassOf default:NegativeEntityMention ;
+      default:lex "rudeness"^^xsd:string .
+
+default:MaitreD
+      a       owl:Class ;
+      rdfs:subClassOf default:Staff ;
+      default:lex "maitre-d"^^xsd:string , "maitre"^^xsd:string .
+
+default:Small
+      a       owl:Class ;
+      rdfs:subClassOf default:PropertyMention ;
+      default:lex "small"^^xsd:string .
+
+default:Water
+      a       owl:Class ;
+      rdfs:subClassOf default:DrinksMention ;
+      default:lex "water"^^xsd:string .
+
+default:Japanese
+      a       owl:Class ;
+      rdfs:subClassOf default:Regional ;
+      default:lex "japanese"^^xsd:string .
+
+default:Variety
+      a       owl:Class ;
+      rdfs:subClassOf default:StyleOptionsMention ;
+      default:lex "variety"^^xsd:string .
+
+default:World
+      a       owl:Class ;
+      rdfs:subClassOf default:LocationMention ;
+      default:lex "world"^^xsd:string .
+
+default:MealMention
+      a       owl:Class ;
+      rdfs:subClassOf default:SustenanceMention ;
+      default:lex "meal"^^xsd:string .
+
+default:Enjoyable
+      a       owl:Class ;
+      rdfs:subClassOf default:GenericPositivePropertyMention ;
+      default:lex "enjoyable"^^xsd:string .
+
+default:Extensive
+      a       owl:Class ;
+      rdfs:subClassOf default:PropertyMention ;
+      default:lex "extensive"^^xsd:string .
+
+[]    a       owl:Class ;
+      rdfs:subClassOf default:Negative ;
+      owl:intersectionOf (default:Dry default:Meat) .
+
+default:PersonMention
+      a       owl:Class ;
+      rdfs:subClassOf default:EntityMention .
+
+default:Sashimi
+      a       owl:Class ;
+      rdfs:subClassOf default:Sushi .
+
+default:Ingredient
+      a       owl:Class ;
+      rdfs:subClassOf default:SustenanceMention ;
+      default:lex "ingredient"^^xsd:string .
+
+default:Torture
+      a       owl:Class ;
+      rdfs:subClassOf default:NegativeEntityMention ;
+      default:lex "torture"^^xsd:string .
+
+default:Family
+      a       owl:Class ;
+      rdfs:subClassOf default:PersonMention ;
+      default:lex "family"^^xsd:string .
+
+default:Garden
+      a       owl:Class ;
+      rdfs:subClassOf default:AmbienceMention ;
+      default:lex "garden"^^xsd:string .
+
+default:Vegetarian
+      a       owl:Class ;
+      rdfs:subClassOf default:FoodMention ;
+      default:lex "vegetarian"^^xsd:string .
+
+default:Shrimp
+      a       owl:Class ;
+      rdfs:subClassOf default:Seafood ;
+      default:lex "shrimp"^^xsd:string .
+
+default:Happy
+      a       owl:Class ;
+      rdfs:subClassOf default:GenericPositivePropertyMention ;
+      default:lex "happy"^^xsd:string .
+
+default:Entertainment
+      a       owl:Class ;
+      rdfs:subClassOf default:AmbienceMention ;
+      default:lex "entertainment"^^xsd:string .
+
+default:Hudson
+      a       owl:Class ;
+      rdfs:subClassOf default:NamedLocationMention ;
+      default:lex "hudson"^^xsd:string .
+
+default:Seat
+      a       owl:Class ;
+      rdfs:subClassOf default:AmbienceMention ;
+      default:lex "seat"^^xsd:string .
+
+default:Deal
+      a       owl:Class ;
+      rdfs:subClassOf default:PriceMention , default:PositiveEntityMention ;
+      default:lex "deal"^^xsd:string .
+
+default:Brilliant
+      a       owl:Class ;
+      rdfs:subClassOf default:GenericPositivePropertyMention ;
+      default:lex "brilliant"^^xsd:string .
+
+default:Sauce
+      a       owl:Class ;
+      rdfs:subClassOf default:FoodMention ;
+      default:lex "sauce"^^xsd:string .
+
+[]    a       owl:Class ;
+      rdfs:subClassOf default:Negative ;
+      owl:intersectionOf (default:AmbienceMention default:Cheap) .
+
+default:Staff
+      a       owl:Class ;
+      rdfs:subClassOf default:PersonMention , default:ServiceMention ;
+      default:lex "crew"^^xsd:string , "staff"^^xsd:string .
+
+default:Positive
+      a       owl:Class ;
+      rdfs:subClassOf default:Sentiment .
+
+default:Overhyped
+      a       owl:Class ;
+      rdfs:subClassOf default:GenericNegativePropertyMention ;
+      default:lex "overhyped"^^xsd:string .
+
+default:Meat
+      a       owl:Class ;
+      rdfs:subClassOf default:FoodMention ;
+      default:lex "meat"^^xsd:string .
+
+default:Waiter
+      a       owl:Class ;
+      rdfs:subClassOf default:Staff ;
+      default:lex "waitress"^^xsd:string , "waiter"^^xsd:string , "waitstaff"^^xsd:string .
+
+default:Prompt
+      a       owl:Class ;
+      rdfs:subClassOf default:ServicePositivePropertyMention ;
+      default:lex "prompt"^^xsd:string .
+
+default:View
+      a       owl:Class ;
+      rdfs:subClassOf default:LocationMention ;
+      default:lex "view"^^xsd:string .
+
+default:Sassy
+      a       owl:Class ;
+      rdfs:subClassOf default:GenericPositivePropertyMention ;
+      default:lex "sassy"^^xsd:string .
+
+default:Pepperoni
+      a       owl:Class ;
+      rdfs:subClassOf default:Vegetable ;
+      default:lex "pepperoni"^^xsd:string .
+
+[]    a       owl:Class ;
+      rdfs:subClassOf default:Positive ;
+      owl:intersectionOf (default:Big default:Serving) .
+
+default:Reasonably
+      a       owl:Class ;
+      rdfs:subClassOf default:PropertyMention ;
+      default:lex "reasonable"^^xsd:string , "reasonably"^^xsd:string .
+
+default:Avenue
+      a       owl:Class ;
+      rdfs:subClassOf default:LocationMention ;
+      default:lex "ave"^^xsd:string , "avenue"^^xsd:string .
+
+default:ServiceMention
+      a       owl:Class ;
+      rdfs:subClassOf default:EntityMention ;
+      default:aspect "SERVICE#GENERAL"^^xsd:string ;
+      default:lex "service"^^xsd:string , "survice"^^xsd:string .
+
+default:Presentation
+      a       owl:Class ;
+      rdfs:subClassOf default:StyleOptionsMention ;
+      default:lex "presentation"^^xsd:string .
+
+default:Divine
+      a       owl:Class ;
+      rdfs:subClassOf default:SustenancePositiveProperty ;
+      default:lex "divine"^^xsd:string , "devine"^^xsd:string .
+
+default:Gigondas
+      a       owl:Class ;
+      rdfs:subClassOf default:Wine ;
+      default:lex "gigondas"^^xsd:string .
+
+default:Menu
+      a       owl:Class ;
+      rdfs:subClassOf default:StyleOptionsMention ;
+      default:lex "menu"^^xsd:string .
+
+default:Tuna
+      a       owl:Class ;
+      rdfs:subClassOf default:Fish ;
+      default:lex "tuna"^^xsd:string .
+
+default:Egg
+      a       owl:Class ;
+      rdfs:subClassOf default:FoodMention ;
+      default:lex "egg"^^xsd:string .
+
+default:Course
+      a       owl:Class ;
+      rdfs:subClassOf default:MealParts ;
+      default:lex "course"^^xsd:string .
+
+default:Phenomenal
+      a       owl:Class ;
+      rdfs:subClassOf default:GenericPositivePropertyMention ;
+      default:lex "phenomenal"^^xsd:string .
+
+default:Dinner
+      a       owl:Class ;
+      rdfs:subClassOf default:MealOccasion ;
+      default:lex "dinner"^^xsd:string , "dining"^^xsd:string .
+
+default:Coffee
+      a       owl:Class ;
+      rdfs:subClassOf default:DrinksMention ;
+      default:lex "coffee"^^xsd:string .
+
+<http://www.kimschouten.com/sentiment/restaurant>
+      a       owl:Ontology .
+
+default:Spicy
+      a       owl:Class ;
+      rdfs:subClassOf default:SustenancePositiveProperty , default:Flavor ;
+      default:lex "spicy"^^xsd:string .
+
+default:Outstanding
+      a       owl:Class ;
+      rdfs:subClassOf default:GenericPositivePropertyMention ;
+      default:lex "outstanding"^^xsd:string .
+
+default:MealParts
+      a       owl:Class ;
+      rdfs:subClassOf default:MealMention .
+
+default:Indian
+      a       owl:Class ;
+      rdfs:subClassOf default:Regional ;
+      default:lex "indian"^^xsd:string .
+
+default:Pineapple
+      a       owl:Class ;
+      rdfs:subClassOf default:Fruit ;
+      default:lex "pineapple"^^xsd:string .
+
+default:Cramped
+      a       owl:Class ;
+      rdfs:subClassOf default:AmbienceNegativeProperty ;
+      default:lex "cramped"^^xsd:string .
+
+default:Choice
+      a       owl:Class ;
+      rdfs:subClassOf default:StyleOptionsMention ;
+      default:lex "choice"^^xsd:string .
+
+default:Negative
+      a       owl:Class ;
+      rdfs:subClassOf default:Sentiment ;
+      owl:disjointWith default:Positive .
+
+[]    a       owl:Class ;
+      rdfs:subClassOf default:Negative ;
+      owl:intersectionOf (default:High default:PriceMention) .
+
+default:GenericNegativeAction
+      a       owl:Class ;
+      rdfs:subClassOf default:ActionMention , default:Negative ;
+      owl:disjointWith default:GenericPositiveAction .
+
+default:Oily
+      a       owl:Class ;
+      rdfs:subClassOf default:SustenanceNegativeProperty ;
+      default:lex "oily"^^xsd:string .
+
+default:Poor
+      a       owl:Class ;
+      rdfs:subClassOf default:GenericNegativePropertyMention ;
+      default:lex "poor"^^xsd:string .
+
+default:GenericPositivePropertyMention
+      a       owl:Class ;
+      rdfs:subClassOf default:Positive , default:PropertyMention .
+
+default:Spotty
+      a       owl:Class ;
+      rdfs:subClassOf default:PropertyMention ;
+      default:lex "spotty"^^xsd:string .
+
+default:Limit
+      a       owl:Class ;
+      rdfs:subClassOf default:GenericNegativeAction ;
+      default:lex "limit"^^xsd:string .
+
+default:Teriyaki
+      a       owl:Class ;
+      rdfs:subClassOf default:Japanese ;
+      default:lex "teriyaki"^^xsd:string .
+
+default:Sentiment
+      a       owl:Class .
+
+default:Romantic
+      a       owl:Class ;
+      rdfs:subClassOf default:AmbiencePositiveProperty ;
+      default:lex "romantic"^^xsd:string .
+
+default:Reputation
+      a       owl:Class ;
+      rdfs:subClassOf default:ExperienceMention ;
+      default:lex "reputation"^^xsd:string .
+
+default:Aesthetic
+      a       owl:Class ;
+      rdfs:subClassOf default:AmbiencePositiveProperty ;
+      default:lex "aesthetic"^^xsd:string .
+
+default:Rush
+      a       owl:Class ;
+      rdfs:subClassOf default:GenericNegativeAction ;
+      default:lex "rush"^^xsd:string .
+
+default:Spill
+      a       owl:Class ;
+      rdfs:subClassOf default:GenericNegativeAction ;
+      default:lex "spill"^^xsd:string .
+
+default:Crowd
+      a       owl:Class ;
+      rdfs:subClassOf default:PersonMention ;
+      default:lex "crowd"^^xsd:string .
+
+default:Jazz
+      a       owl:Class ;
+      rdfs:subClassOf default:Music ;
+      default:lex "jazz"^^xsd:string .
+
+default:SustenanceMention
+      a       owl:Class ;
+      rdfs:subClassOf default:EntityMention ;
+      default:aspect "FOOD#QUALITY"^^xsd:string , "FOOD#STYLE_OPTIONS"^^xsd:string , "FOOD#PRICES"^^xsd:string .
+
+default:Cantonese
+      a       owl:Class ;
+      rdfs:subClassOf default:Chinese ;
+      default:lex "cantonese"^^xsd:string .
+
+default:Disgusting
+      a       owl:Class ;
+      rdfs:subClassOf default:SustenanceNegativeProperty ;
+      default:lex "disgusting"^^xsd:string .
+
+[]    a       owl:Class ;
+      rdfs:subClassOf default:Positive ;
+      owl:intersectionOf (default:Cute default:RestaurantMention) .
+
+[]    a       owl:Class ;
+      rdfs:subClassOf default:Negative ;
+      owl:intersectionOf (default:ServiceMention default:Spotty) .
+
+default:Establishment
+      a       owl:Class ;
+      rdfs:subClassOf default:RestaurantMention ;
+      default:lex "establishment"^^xsd:string .
+
+default:Humor
+      a       owl:Class ;
+      rdfs:subClassOf default:ServicePositivePropertyMention ;
+      default:lex "humor"^^xsd:string .
+
+default:Neighborhood
+      a       owl:Class ;
+      rdfs:subClassOf default:LocationMention ;
+      default:lex "neighborhood"^^xsd:string .
+
+default:Portion
+      a       owl:Class ;
+      rdfs:subClassOf default:Serving ;
+      default:lex "portion"^^xsd:string .
+
+default:Delicious
+      a       owl:Class ;
+      rdfs:subClassOf default:SustenancePositiveProperty ;
+      default:lex "delicious"^^xsd:string .
+
+[]    a       owl:Class ;
+      rdfs:subClassOf default:Negative ;
+      owl:intersectionOf (default:AmbienceMention default:Cold) .
+
+default:Restaurant
+      a       owl:Class ;
+      rdfs:subClassOf default:RestaurantMention ;
+      default:lex "restaurant"^^xsd:string .
+
+default:Cute
+      a       owl:Class ;
+      rdfs:subClassOf default:PropertyMention ;
+      default:lex "cute"^^xsd:string .
+
+default:FoodMention
+      a       owl:Class ;
+      rdfs:subClassOf default:SustenanceMention ;
+      default:lex "food"^^xsd:string .
+
+default:Attentive
+      a       owl:Class ;
+      rdfs:subClassOf default:ServicePositivePropertyMention ;
+      default:lex "attentive"^^xsd:string .
+
+default:Request
+      a       owl:Class ;
+      rdfs:subClassOf default:ServiceMention ;
+      default:lex "request"^^xsd:string .
+
+default:Espresso
+      a       owl:Class ;
+      rdfs:subClassOf default:Coffee ;
+      default:lex "expresso"^^xsd:string , "espresso"^^xsd:string .
+
+default:Perfect
+      a       owl:Class ;
+      rdfs:subClassOf default:GenericPositivePropertyMention ;
+      default:lex "perfect"^^xsd:string .
+
+default:Tip
+      a       owl:Class ;
+      rdfs:subClassOf default:ServiceMention ;
+      default:lex "tip"^^xsd:string .
+
+default:River
+      a       owl:Class ;
+      rdfs:subClassOf default:LocationMention ;
+      default:lex "river"^^xsd:string .
+
+default:Rude
+      a       owl:Class ;
+      rdfs:subClassOf default:ServiceNegativeProperty ;
+      default:lex "rude"^^xsd:string .
