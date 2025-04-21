@@ -1,6 +1,7 @@
 import xml.etree.ElementTree as ET
 import json
 
+# Definition to convert 2014 XML structure to 2015/2016 XML structure
 def convert_semeval14_to_15_16_format(semeval14_path, output_path):
     # Converts SemEval14 dataset to SemEval15/16 format 
     
@@ -44,6 +45,7 @@ def convert_semeval14_to_15_16_format(semeval14_path, output_path):
     tree.write(output_path, encoding="utf-8", xml_declaration=True)
     print(f"Converted SemEval14 dataset saved to: {output_path}")
 
+# Definition to delete the implict aspect from the dataset (only works for 2015/2016 XML structure!)
 def delete_implicit_aspects(input_path, output_path):
     #deleting the implicit aspects (target = null) from the dataset
 
@@ -90,34 +92,7 @@ def delete_implicit_aspects(input_path, output_path):
     tree.write(output_path, encoding="utf-8", xml_declaration=True)
     print(f"Dataset with implicit aspects removed saved to: {output_path}")
 
-def instruction_finetuning_preprocessing(input_path, output_path):
-
-    # Load the XML file
-    tree = ET.parse(input_path)
-
-    json_data = []
-    for review in tree.findall('.//Review'):
-
-        for sentence in review.findall('.//sentence'):
-            sentence_text = sentence.find('text').text
-
-            for opinion in sentence.findall('.//Opinion'):
-                aspect = opinion.get('target')
-                polarity = opinion.get('polarity')
-
-                instruction = f"Given the sentence '{sentence_text}' and the aspect '{aspect}', what is the sentiment?"
-
-                json_entry = {
-                    "instruction": instruction,
-                    "response": polarity
-                }
-                json_data.append(json_entry)
-
-    with open(output_path, 'w', encoding='utf-8') as f:
-        json.dump(json_data, f, indent=2, ensure_ascii=False)
-
-    print(f"JSON file has been created at: {output_path}")
-
+# Definition to remove intersections between train and test data from the train data (only works for 2015/2016 XML structure!)
 def remove_intersections(training_input_path, validation_input_path, training_output_path):
 
     def extract_sentences_from_xml(input_file):
@@ -174,3 +149,33 @@ def remove_intersections(training_input_path, validation_input_path, training_ou
     # Write the modified XML to the output file
     training_tree.write(training_output_path, encoding="utf-8", xml_declaration=True)
     print(f"Training Dataset with intersections removed saved to: {training_output_path}")
+
+
+# Definition to convert XML to JSON for instruction fine-tuning
+def instruction_finetuning_preprocessing(input_path, output_path):
+
+    # Load the XML file
+    tree = ET.parse(input_path)
+
+    json_data = []
+    for review in tree.findall('.//Review'):
+
+        for sentence in review.findall('.//sentence'):
+            sentence_text = sentence.find('text').text
+
+            for opinion in sentence.findall('.//Opinion'):
+                aspect = opinion.get('target')
+                polarity = opinion.get('polarity')
+
+                instruction = f"Given the sentence '{sentence_text}' and the aspect '{aspect}', what is the sentiment?"
+
+                json_entry = {
+                    "instruction": instruction,
+                    "response": polarity
+                }
+                json_data.append(json_entry)
+
+    with open(output_path, 'w', encoding='utf-8') as f:
+        json.dump(json_data, f, indent=2, ensure_ascii=False)
+
+    print(f"JSON file has been created at: {output_path}")
