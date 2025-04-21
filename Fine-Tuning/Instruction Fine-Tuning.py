@@ -1,5 +1,3 @@
-!pip install datasets transformers peft evaluate accelerate scikit-learn --quiet
-
 from datasets import load_dataset, DatasetDict, Dataset
 from transformers import (
     AutoModelForCausalLM,
