@@ -1,0 +1,10 @@
+huggingface-hub==0.14.1 
+numpy==1.24.3 
+torch==2.0.1 
+tiktoken==0.4.0 
+owlready2==0.40 
+openai==0.27.8 
+rank-bm25==0.2.2 
+scipy==1.10.1 
+scikit-learn==1.2.2 
+transformers==4.28.1
