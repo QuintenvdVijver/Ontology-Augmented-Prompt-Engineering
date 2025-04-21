@@ -93,7 +93,7 @@ def delete_implicit_aspects(input_path, output_path):
     print(f"Dataset with implicit aspects removed saved to: {output_path}")
 
 # Definition to remove intersections between train and test data from the train data (only works for 2015/2016 XML structure!)
-def remove_intersections(training_input_path, validation_input_path, training_output_path):
+def remove_intersections(training_input_path, test_input_path, training_output_path):
 
     def extract_sentences_from_xml(input_file):
             # Parse the XML string
@@ -110,11 +110,11 @@ def remove_intersections(training_input_path, validation_input_path, training_ou
             
             return sentences
     
-    def intersection(training_file, validation_file):
+    def intersection(training_file, test_file):
 
         # Extract sentences from both datasets
         train_sentences = extract_sentences_from_xml(training_file)
-        valid_sentences = extract_sentences_from_xml(validation_file)
+        valid_sentences = extract_sentences_from_xml(test_file)
 
         # Find intersection of sentences (common ones)
         common_sentences = train_sentences.intersection(valid_sentences)
@@ -125,7 +125,7 @@ def remove_intersections(training_input_path, validation_input_path, training_ou
     # Load input files
     training_tree = ET.parse(training_input_path)
     training_root = training_tree.getroot()
-    intersection = intersection(training_input_path, validation_input_path)
+    intersection = intersection(training_input_path, test_input_path)
 
     #Iterature over all reviews and sentences
     for review in training_root.findall('.//Review'):
