@@ -22,7 +22,7 @@ key_deepinfra = ''
 # Load the training file and ontology
 domain_ontology_path = ""
 train_file_path = ""
-validation_file_path = ""
+test_file_path = ""
 
 # Load the ontology
 ontology = get_ontology(f"file://{domain_ontology_path}").load()
@@ -33,10 +33,10 @@ train_root = train_tree.getroot()
 train_sentences = train_root.findall(".//sentence")
 train_corpus = [sentence.find("text").text for sentence in train_sentences]
 
-# Load validation dataset for result generation
-validation_tree = ET.parse(validation_file_path)
-validation_root = validation_tree.getroot()
-validation_sentences = validation_root.findall(".//sentence")
+# Load test dataset for result generation
+test_tree = ET.parse(test_file_path)
+test_root = test_tree.getroot()
+test_sentences = test_root.findall(".//sentence")
 
 openai_client_openai = OpenAI(
     api_key= key_openai
@@ -269,10 +269,10 @@ def aspect_based_ontology_injection(ontology, aspects_category):
     return "\n".join(branch_info)
 
 # Evaluation metrics
-def evaluation(validation_sentences, results):
+def evaluation(test_sentences, results):
 
     ground_truth = []
-    for sentence in validation_sentences:
+    for sentence in test_sentences:
         sentence_id = sentence.get("id")
         opinions = sentence.findall(".//Opinion")
         sentence_truth = {opinion.get("target"): opinion.get("polarity").capitalize() for opinion in opinions}
@@ -353,7 +353,7 @@ Always respond with a valid JSON. Do not invlude any extra characters, symbols, 
 """
 
 # Main
-for sentence in validation_sentences:
+for sentence in test_sentences:
     sentence_id = sentence.get("id")
     sentence_text = sentence.find("text").text
 
@@ -408,5 +408,5 @@ for sentence in validation_sentences:
 
     results.append(output)
 
-final_results = evaluation(validation_sentences, results)
+final_results = evaluation(test_sentences, results)
 print(final_results)
