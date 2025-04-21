@@ -4,6 +4,10 @@ This code can be used to conduct ontology prompt injection into various LLM mode
 ## Before running the code
 - Set up environment:
   - Set up your Google Collab (or something similar) with Python 3.10
-  - run `pip install -r requirements.txt` in your terminal
-- 
+  - Run `pip install -r requirements.txt` in your terminal
+- Set up data:
+  - The data and ontologies can be found at `Data/Raw SemEval data` & `Data/Domain ontologies`
+  - Use the `full_ontology_verbalization.py` file to verbalize the ontologies
+
+## Training and validating process
 
