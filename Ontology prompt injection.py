@@ -74,6 +74,15 @@ def get_response_Llama370Binstruct(openai_client, prompt, temperature=0):
     )
     return output.choices[0].message.content
 
+def get_response_Llama417Binstruct(openai_client, prompt, temperature=0):
+    messages = [{"role":"user", "content":prompt}]
+    output = openai_client.chat.completions.create(
+        model="meta-llama/Llama-4-Scout-17B-16E-Instruct",
+        messages=messages,
+        temperature = temperature
+    )
+    return output.choices[0].message.content
+
 # BM25
 def BM25_demonstration_selection(query_sentence, train_corpus, top_k):
 
@@ -325,7 +334,7 @@ Your task is aspect-based sentiment classification.
 Assign a polarity (positive, neutral, negative) to the given aspect(s) in the following sentence based on its context and
 the provided demonstrations.
 
-Domain_ontology:
+Domain Ontology:
 {domain_ontology}
 
 Demonstrations:
@@ -360,7 +369,7 @@ for sentence in validation_sentences:
 
     # Ontology injection (SELECT CORRECT ONE)
     ontology_injection = full_ontology_injection(ontology)
-    ontology_injection = aspect_based_onotology_injection(ontology, aspects_category)
+    ontology_injection = aspect_based_ontology_injection(ontology, aspects_category)
 
     # Format demonstrations
     demonstrations = []
@@ -395,6 +404,7 @@ for sentence in validation_sentences:
     output = get_response_gpt35turbo(openai_client_openai, prompt)
     output = get_response_gpt4omini(openai_client_openai, prompt)
     output = get_response_Llama370Binstruct(openai_client_deepinfra, prompt)
+    output = get_response_Llama417Binstruct(openai_client_deepinfra, prompt)
 
     results.append(output)
 
