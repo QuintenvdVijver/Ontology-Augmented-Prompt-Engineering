@@ -15,6 +15,9 @@ from sklearn.metrics import accuracy_score, f1_score
 from transformers import pipeline, AutoModel, AutoTokenizer
 from collections import defaultdict
 
+# OpenAI response functions
+key_openai = ''
+key_deepinfra = ''
 
 # Load the training file and ontology
 domain_ontology_path = ""
@@ -34,10 +37,6 @@ train_corpus = [sentence.find("text").text for sentence in train_sentences]
 validation_tree = ET.parse(validation_file_path)
 validation_root = validation_tree.getroot()
 validation_sentences = validation_root.findall(".//sentence")
-
-# OpenAI response functions
-key_openai = ''
-key_deepinfra = ''
 
 openai_client_openai = OpenAI(
     api_key= key_openai
