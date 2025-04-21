@@ -7,7 +7,10 @@ This code can be used to conduct ontology prompt injection into various LLM mode
   - Run `pip install -r requirements.txt` in your terminal
 - Set up data:
   - The data and ontologies can be found at `Data/Raw SemEval data` & `Data/Domain ontologies`
-  - Use the `data pre-processing.py` file to transform SemEval 2014 datasets into the same structure as SemEval 2015 & 2016 datasets
+  - Using the `data pre-processing.py` file, preprocess the data as follows:
+    1. For 2014 data, convert the XML structure to the 2015/2016 XML structure
+    2. Remove the implicit aspects from the data
+    3. Remove the intersections between the training and test data from the training data
 
 ## Running the code
 1. Open the `Ontology prompt injection.py` file
