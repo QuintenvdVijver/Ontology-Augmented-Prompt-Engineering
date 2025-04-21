@@ -1,3 +1,5 @@
+from owlready2 import *
+
 def full_ontology_injection(ontology):
     branch_info = []
 
@@ -62,10 +64,6 @@ def full_ontology_injection(ontology):
 
     # Return extraced branches as a formatted string
     return "\n".join(branch_info)
-
-# To run the code:
-# - pip install owlready2
-# - from owlready2 import *
 
 # Main
 domain_ontology_path = 
