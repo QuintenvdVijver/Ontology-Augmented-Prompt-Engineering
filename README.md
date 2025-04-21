@@ -7,7 +7,6 @@ This code can be used to conduct ontology prompt injection into various LLM mode
   - Run `pip install -r requirements.txt` in your terminal
 - Set up data:
   - The data and ontologies can be found at `Data/Raw SemEval data` & `Data/Domain ontologies`
-  - Use the `full_ontology_verbalization.py` file to verbalize the ontologies
   - Use the `data pre-processing.py` file to transform SemEval 2014 datasets into the same structure as SemEval 2015 & 2016 datasets
 
 ## Running the code
